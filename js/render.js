@@ -4,7 +4,6 @@
    ============================================ */
 (function(){
   const data = window.ASFOURA_DATA;
-  if(!data) return;
   const $ = (s, ctx=document) => ctx.querySelector(s);
   const $$ = (s, ctx=document) => Array.from(ctx.querySelectorAll(s));
 
