@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <meta name="description" content="المسارات الوظيفية — 9 خرائط طريق مفصلة، كل مسار مرتبط بمنصات مجانية موثقة." />
+  <title>المسارات الوظيفية — عصفورة الويب</title>
+
+        <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <script>(function(){ try{ var s=localStorage.getItem('asfoura-theme'); var t=s || (window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'); document.documentElement.setAttribute('data-theme', t);}catch(e){}})();</script>
+</head>
+<body>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+  
+  <div class="splash" id="splash" aria-hidden="true" role="dialog" aria-label="مرحباً">
+    <div class="splash__logo"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M7.2 11.6C9.6 12.5 11.8 13.6 13.9 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M24.8 11.6C22.4 12.5 20.2 13.6 18.1 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16 23.6L13.6 26M16 23.6L18.4 26" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="splash__title">عصفورة الويب</div>
+    <p style="font-size:13px; color:var(--text-muted);">مصادر موثوقة • فرص حقيقية • مسارات واضحة</p>
+    <button class="splash__skip" id="splashSkip" type="button">تخطي</button>
+  </div>
+  <div class="loading-bar" id="loadingBar" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+
+  <header class="navbar" role="banner">
+    <div class="container navbar__inner">
+      <a href="../index.html" class="navbar__brand">
+        <span class="navbar__logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3c-1.5 2-4 3.5-6.5 3.5.5 2 2 3.8 4.2 4.8L12 15l2.3-3.7c2.2-1 3.7-2.8 4.2-4.8C16 6.5 13.5 5 12 3z"/><path d="M12 15v4"/><path d="M9 19h6"/></svg></span>
+        <span class="navbar__brand-text"><span class="navbar__brand-title"><span style="color:var(--color-primary)">عصفورة</span> الويب</span><span class="navbar__brand-sub">مصادر <span aria-hidden="true" style="opacity:0.5; margin:0 1px;">•</span> فرص <span aria-hidden="true" style="opacity:0.5; margin:0 1px;">•</span> مسارات</span></span>
+      </a>
+      <nav class="navbar__links">
+        <a href="../index.html" class="nav-link">الرئيسية</a>
+        <a href="courses.html" class="nav-link">مصادر الكورسات</a>
+        <a href="scholarships.html" class="nav-link">المنح والدورات</a>
+        <a href="career-paths.html" class="nav-link is-active" aria-current="page">المسارات الوظيفية</a>
+        <a href="youtube.html" class="nav-link">قنوات يوتيوب</a>
+        <a href="community.html" class="nav-link" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.54 0c.29 0 .52.22.54.5v19.42c0 .28-.23.51-.51.54l-5.6.7a.5.5 0 0 1-.57-.5v-1.2l.5-.06a.5.5 0 0 0 .44-.5V5.2a.5.5 0 0 0-.5-.5h-8.2a.5.5 0 0 0-.5.5v13.7c0 .25.18.46.42.5l.5.06v1.2a.5.5 0 0 1-.57.5l-5.6-.7a.52.52 0 0 1-.51-.54V.5c.02-.28.25-.5.54-.5h13.12Z"/><circle cx="9.5" cy="13.5" r="1.5"/><circle cx="14.5" cy="13.5" r="1.5"/></svg> المجتمع</a>
+      </nav>
+      <div class="navbar__search" role="search">
+        <div class="search-input-wrap">
+          <input id="navSearch" class="search-input js-search-input" type="search" placeholder="ابحث في المسارات..." autocomplete="off" aria-label="بحث في المسارات" /><label for="navSearch" class="sr-only">بحث في المسارات</label><button class="search-clear" type="button" aria-label="مسح البحث">×</button>
+          <span class="search-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg></span>
+          <span class="search-kbd"><span>/</span> للبحث</span>
+        </div>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="تبديل الوضع">
+          <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/></svg>
+          <svg id="themeIconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="icon-btn" id="favToggle" type="button" aria-label="المفضلة" title="المفضلة" style="position:relative;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 17.3l-5.4 3.2 1.4-6.1L3 9.9l6.2-.5L12 3.8l2.8 5.6 6.2.5-5 4.5 1.4 6.1z"/></svg>
+          <span class="fav-count" id="favCount" style="display:none;">0</span>
+        </button>
+        <button id="menuToggle" class="icon-btn navbar__toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu">
+          <svg id="iconMenu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+          <svg id="iconClose" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__search"><div class="search-input-wrap"><input class="search-input js-search-input" type="search" placeholder="ابحث في المسارات..." aria-label="بحث في المسارات" /><button class="search-clear" type="button" aria-label="مسح البحث">×</button><span class="search-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg></span></div></div>
+    <div class="mobile-menu__links">
+      <a href="../index.html" class="mobile-menu__link">الرئيسية <span>‹</span></a>
+      <a href="courses.html" class="mobile-menu__link">مصادر الكورسات <span>‹</span></a>
+      <a href="scholarships.html" class="mobile-menu__link">المنح والدورات <span>‹</span></a>
+      <a href="career-paths.html" class="mobile-menu__link is-active">المسارات الوظيفية <span>‹</span></a>
+      <a href="youtube.html" class="mobile-menu__link">قنوات يوتيوب مفيدة <span>‹</span></a>
+      <a href="community.html" class="mobile-menu__link">المجتمع — ديسكورد <span>‹</span></a>
+    </div>
+  </nav>
+
+  <div id="searchOverlay" class="search-overlay" aria-hidden="true" role="dialog" aria-label="البحث">
+    <div class="search-overlay__panel">
+      <div class="search-overlay__header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--text-muted)"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg>
+        <input id="searchOverlayInput" class="search-overlay__input" type="search" placeholder="ابحث في المسارات الوظيفية..." aria-label="بحث في المسارات الوظيفية" /><button class="search-clear" id="searchOverlayClear" type="button" aria-label="مسح البحث" style="position:static; margin-right:8px;">×</button>
+        <button id="searchOverlayClose" class="icon-btn" style="width:36px;height:36px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg></button>
+      </div>
+      <div id="searchOverlayResults" class="search-overlay__body"></div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb"><a href="../index.html">الرئيسية</a><span class="breadcrumb__sep">/</span><span aria-current="page">المسارات الوظيفية</span></nav>
+        <h1 class="page-header__title">
+          <span class="page-header__icon" style="background:#FFF0F1; color:#E32027; border:1px solid #FFE0E3;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20c-4-2-7-5-7-10V6l7-4 7 4v4c0 5-3 8-7 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </span>
+          المسارات الوظيفية
+        </h1>
+        <p class="page-header__desc">9 مسارات وظيفية — من الذكاء الاصطناعي والأمن السيبراني حتى التصميم والمونتاج والإنجليزية. كل مسار خارطة طريق من 3 إلى 6 مراحل (3–12 شهر) مرتبطة بمصادر مجانية موثقة مع مخرج عملي لكل مرحلة.</p>
+        <div class="page-header__meta">
+          <span class="badge badge--primary">9 مسارات</span>
+          <span class="badge badge--muted">3–6 مراحل لكل مسار</span>
+          <span class="badge badge--muted">مصادر موثقة — محدثة حتى 13 أكتوبر 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:16px;">
+          <span style="width:38px;height:38px; border-radius:10px; background:var(--bg-muted); border:1px solid var(--border-color); display:grid; place-items:center;">💡</span>
+          <p style="font-size:13px; color:var(--text-secondary); flex:1; min-width:220px; line-height:1.7;">كل مسار مرتبط مباشرة ببطاقات <strong>مصادر الكورسات</strong> — افتح أي مرحلة لتجد رابط المنصة الرسمي. استخدم البحث للفلترة الفورية.</p>
+          <span class="badge badge--muted">البحث يفلتر المسارات</span>
+        </div>
+
+
+        <div class="card" style="margin-bottom:20px; background:var(--bg-surface); border:1px solid var(--border-color);">
+          <h2 style="font-size:15px; margin-bottom:12px; display:flex; align-items:center; gap:8px;">📈 اتجاهات السوق — لماذا هذه المسارات مطلوبة؟</h2>
+          <div id="marketTrends" class="grid-3" style="gap:10px;"></div>
+        </div>
+                <!-- شرائح سريعة — تصفية المسارات -->
+        <div class="chips" id="careerChips" style="margin:14px 0 12px;">
+          <button type="button" class="chip is-active" data-filter="all">الكل (9)</button>
+          <button type="button" class="chip" data-filter="ai">ذكاء اصطناعي</button>
+          <button type="button" class="chip" data-filter="data">تحليل بيانات</button>
+          <button type="button" class="chip" data-filter="cyber">الأمن السيبراني</button>
+          <button type="button" class="chip" data-filter="web">تطوير ويب</button>
+          <button type="button" class="chip" data-filter="ui">تصميم UI/UX</button>
+          <button type="button" class="chip" data-filter="short">قصير (3‑4 شهر)</button>
+          <span class="results-counter" id="careerCounter">9 من 9</span>
+        </div>
+        <div id="careerGrid" class="grid-3"></div>
+
+        <!-- خطة 90 يومًا التفاعلية -->
+        <div class="card plan90" id="plan90Card" style="margin-top:20px;">
+          <div style="display:flex; align-items:start; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+            <div>
+              <h2 style="font-size:16px; margin-bottom:4px; display:flex; align-items:center; gap:8px;">📚 خطة 90 يومًا التفاعلية <span class="badge badge--primary" id="plan90ProgressText">0%</span></h2>
+              <p class="section-header__desc" id="plan90Title">اختر مسارك وابدأ التتبع</p>
+            </div>
+            <button class="btn btn--ghost btn--sm" id="plan90Reset" type="button">إعادة ضبط</button>
+          </div>
+          <div class="plan90__bar-wrap" style="margin:12px 0 14px;">
+            <div class="plan90__bar"><div class="plan90__bar-fill" id="plan90Bar"></div></div>
+            <div style="display:flex; justify-content:space-between; font-size:11.5px; color:var(--text-muted); margin-top:6px;">
+              <span id="plan90Count">0 / 13</span><span id="plan90Pct">0%</span>
+            </div>
+          </div>
+          <div class="plan90__tasks" id="plan90Tasks"></div>
+        </div>
+      </div>
+    </section>
+    
+        <!-- أسئلة شائعة — المسارات -->
+        <div class="card" style="margin-top:20px;">
+          <h2 style="font-size:16px; margin-bottom:12px;">❓ أسئلة شائعة — المسارات</h2>
+          <div class="faq" id="faqCareer"></div>
+        </div>
+
+        <details class="card" style="margin-top:16px;">
+          <summary>📑 جدول المسارات المرجعي <span class="badge badge--muted">اضغط للفتح</span></summary>
+          <div class="details-body" style="padding-top:16px;">
+            <div style="overflow-x:auto;">
+              <table style="width:100%; border-collapse:collapse; font-size:13px;">
+                <thead><tr style="background:var(--bg-muted);"><th style="padding:10px; border:1px solid var(--border-color); text-align:right;">المسار</th><th style="padding:10px; border:1px solid var(--border-color);">المدة</th><th style="padding:10px; border:1px solid var(--border-color);">الهدف</th></tr></thead>
+                <tbody id="refTableCareer"></tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+
+        <!-- محدد المساعد — المسارات -->
+        <div class="helper" id="careerHelper" style="margin-top:16px;">
+          <h2 style="font-size:15px; margin-bottom:6px;">🎯 ما المسار الأنسب لي؟</h2>
+          <div class="helper__options" id="careerHelperOptions"></div>
+          <div class="helper__result" id="careerHelperResult"></div>
+        </div>
+
+        <nav class="toc" id="toc" aria-label="فهرس المحتويات"></nav>
+</main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div><div class="footer__brand-title"><span style="width:28px;height:28px; border-radius:8px; background:#FFFFFF; border:1.5px solid #FFE0E3; color:#E32027; display:grid; place-items:center; box-shadow:0 1px 3px rgba(10,10,10,0.08);"><svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span> عصفورة الويب</div><p class="footer__brand-desc">المسارات — 9 خرائط طريق مفصلة. كل مرحلة بمصدر رسمي ومخرج عملي.</p></div>
+        <div><h3 class="footer__col-title">التنقل</h4><div class="footer__links"><a href="../index.html" class="footer__link">الرئيسية</a><a href="courses.html" class="footer__link">مصادر الكورسات</a><a href="scholarships.html" class="footer__link">المنح والدورات</a>
+            <a href="community.html" class="footer__link" style="display:inline-flex; align-items:center; gap:6px;">💬 مجتمع الديسكورد</a></div></div>
+                <div>
+          <h3 class="footer__col-title">معلومات</h4>
+          <div class="footer__links">
+            <a href="#" class="footer__link" data-coming-soon>عن المنصة</a>
+            <a href="#" class="footer__link" data-coming-soon>تواصل معنا</a>
+            <a href="#" class="footer__link" data-coming-soon>سياسة الخصوصية</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 عصفورة الويب — جميع الحقوق محفوظة</span><span>المسارات • مصادر موثوقة</span></div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="العودة للأعلى"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg></button>
+  <div id="toast" class="toast"></div>
+  <script src="../js/data.js"></script>
+  <script src="../js/render.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

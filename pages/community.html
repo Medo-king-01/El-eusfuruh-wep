@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <meta name="description" content="مجتمع عصفورة الويب على الديسكورد — للدراسة ومشاركة الخبرات والتجارب، أسئلة، مراجعات بورتفوليو، وغرف مذاكرة صامتة." />
+  <title>المجتمع — ديسكورد عصفورة الويب</title>
+
+        <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <script>(function(){ try{ var s=localStorage.getItem('asfoura-theme'); var t=s || (window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'); document.documentElement.setAttribute('data-theme', t);}catch(e){}})();</script>
+  <style>
+    .discord-hero{
+      background: linear-gradient(135deg, #5865F2 0%, #404EED 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .discord-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(600px 300px at 85% -10%, rgba(255,255,255,0.18), transparent 60%);
+      pointer-events:none;
+    }
+    .discord-hero > *{ position:relative; z-index:1; }
+    .discord-btn{
+      display:inline-flex; align-items:center; gap:10px;
+      background:white; color:#5865F2;
+      padding:13px 22px; border-radius:999px;
+      font-weight:800; font-size:14.5px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      transition: transform 0.18s ease, box-shadow 0.18s;
+      text-decoration:none;
+    }
+    .discord-btn:hover{ transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.22); }
+    .discord-btn--ghost{
+      background: rgba(255,255,255,0.14);
+      color: white;
+      border: 1.5px solid rgba(255,255,255,0.28);
+      box-shadow:none;
+    }
+    .discord-btn--ghost:hover{ background: rgba(255,255,255,0.20); }
+    .community-grid{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;
+    }
+    @media(max-width:860px){ .community-grid{ grid-template-columns:1fr; } }
+    .rule-card{ background: var(--bg-surface); border:1px solid var(--border-color); border-radius:12px; padding:14px; }
+    .widget-wrap{
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow:hidden;
+    }
+    .channel-pill{
+      display:inline-flex; align-items:center; gap:6px;
+      background: var(--bg-muted); border:1px solid var(--border-color);
+      padding:6px 10px; border-radius:999px; font-size:12px; font-weight:700;
+    }
+  </style>
+</head>
+<body>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+  
+  <div class="splash" id="splash" aria-hidden="true" role="dialog" aria-label="مرحباً">
+    <div class="splash__logo"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M7.2 11.6C9.6 12.5 11.8 13.6 13.9 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M24.8 11.6C22.4 12.5 20.2 13.6 18.1 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16 23.6L13.6 26M16 23.6L18.4 26" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="splash__title">عصفورة الويب</div>
+    <p style="font-size:13px; color:var(--text-muted);">مصادر موثوقة • فرص حقيقية • مسارات واضحة</p>
+    <button class="splash__skip" id="splashSkip" type="button">تخطي</button>
+  </div>
+  <div class="loading-bar" id="loadingBar" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+
+  <header class="navbar" role="banner">
+    <div class="container navbar__inner">
+      <a href="../index.html" class="navbar__brand" aria-label="عصفورة الويب - الرئيسية">
+        <span class="navbar__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="22" height="22"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M7.2 11.6C9.6 12.5 11.8 13.6 13.9 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M24.8 11.6C22.4 12.5 20.2 13.6 18.1 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16 23.6L13.6 26M16 23.6L18.4 26" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="navbar__brand-text"><span class="navbar__brand-title"><span style="color:var(--color-primary)">عصفورة</span> الويب</span><span class="navbar__brand-sub">مصادر <span aria-hidden="true" style="opacity:0.5; margin:0 1px;">•</span> فرص <span aria-hidden="true" style="opacity:0.5; margin:0 1px;">•</span> مسارات</span></span>
+      </a>
+
+      <nav class="navbar__links" aria-label="التنقل الرئيسي">
+        <a href="../index.html" class="nav-link">الرئيسية</a>
+        <a href="courses.html" class="nav-link">مصادر الكورسات</a>
+        <a href="scholarships.html" class="nav-link">المنح والدورات</a>
+        <a href="career-paths.html" class="nav-link">المسارات الوظيفية</a>
+        <a href="youtube.html" class="nav-link">قنوات يوتيوب</a>
+        <a href="community.html" class="nav-link is-active" aria-current="page" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.6 7.2c-1.4-.7-2.9-1.1-4.4-1.4-.2.4-.4.9-.6 1.3-1.6-.2-3.2-.2-4.8 0-.2-.4-.4-.9-.6-1.3-1.5.3-3 .8-4.4 1.4-.9 3.5-.7 6.9.2 10.3 1.3.9 2.7 1.5 4.2 1.9.3-.4.6-.9.8-1.4-.4-.2-.8-.4-1.1-.6l.2-.2c2.4 1.1 5 1.1 7.4 0l.2.2c-.3.2-.7.4-1.1.6.2.5.4.9.8 1.4 1.5-.4 2.9-1 4.2-1.9 1-3.4 1.1-6.8.2-10.3Z"/><circle cx="9.2" cy="13.2" r="1.1" fill="white"/><circle cx="14.8" cy="13.2" r="1.1" fill="white"/></svg> المجتمع</a>
+      </nav>
+
+      <div class="navbar__search" role="search" aria-label="البحث">
+        <label class="sr-only" for="navSearch">بحث</label>
+        <div class="search-input-wrap">
+          <input id="navSearch" class="search-input js-search-input" type="search" placeholder="ابحث..." autocomplete="off" /><button class="search-clear" type="button" aria-label="مسح البحث">×</button>
+          <span class="search-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg></span>
+          <span class="search-kbd" aria-hidden="true"><span>/</span> للبحث</span>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px;">
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="تبديل الوضع">
+          <svg id="themeIconSun" class="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/></svg>
+          <svg id="themeIconMoon" class="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="icon-btn" id="favToggle" type="button" aria-label="المفضلة" title="المفضلة" style="position:relative;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 17.3l-5.4 3.2 1.4-6.1L3 9.9l6.2-.5L12 3.8l2.8 5.6 6.2.5-5 4.5 1.4 6.1z"/></svg>
+          <span class="fav-count" id="favCount" style="display:none;">0</span>
+        </button>
+        <button id="menuToggle" class="icon-btn navbar__toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu">
+          <svg id="iconMenu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+          <svg id="iconClose" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true" aria-label="قائمة الجوال">
+    <div class="mobile-menu__search" role="search">
+      <div class="search-input-wrap">
+        <input class="search-input js-search-input" type="search" placeholder="ابحث..." autocomplete="off" /><button class="search-clear" type="button" aria-label="مسح البحث">×</button>
+        <span class="search-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg></span>
+      </div>
+    </div>
+    <div class="mobile-menu__links">
+      <a href="../index.html" class="mobile-menu__link">الرئيسية <span>‹</span></a>
+      <a href="courses.html" class="mobile-menu__link">مصادر الكورسات المجانية <span>‹</span></a>
+      <a href="scholarships.html" class="mobile-menu__link">المنح والدورات المجانية <span>‹</span></a>
+      <a href="career-paths.html" class="mobile-menu__link">المسارات الوظيفية <span>‹</span></a>
+      <a href="youtube.html" class="mobile-menu__link">قنوات يوتيوب مفيدة <span>‹</span></a>
+      <a href="community.html" class="mobile-menu__link is-active">المجتمع — ديسكورد <span>‹</span></a>
+    </div>
+  </nav>
+
+  <div id="searchOverlay" class="search-overlay" aria-hidden="true" role="dialog" aria-label="البحث">
+    <div class="search-overlay__panel">
+      <div class="search-overlay__header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--text-muted)"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg>
+        <input id="searchOverlayInput" class="search-overlay__input" type="search" placeholder="ابحث..." autocomplete="off" /><button class="search-clear" id="searchOverlayClear" type="button" aria-label="مسح البحث" style="position:static; margin-right:8px;">×</button>
+        <button id="searchOverlayClose" class="icon-btn" type="button" aria-label="إغلاق" style="width:36px;height:36px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg></button>
+      </div>
+      <div id="searchOverlayResults" class="search-overlay__body"></div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="page-header" style="padding-bottom:20px;">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="مسار التنقل">
+          <a href="../index.html">الرئيسية</a><span class="breadcrumb__sep">/</span><span aria-current="page">المجتمع</span>
+        </nav>
+
+        <div class="discord-hero">
+          <div style="display:flex; gap:18px; align-items:start; flex-wrap:wrap;">
+            <div style="width:56px; height:56px; border-radius:16px; background:white; display:grid; place-items:center; flex-shrink:0;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="#5865F2" aria-hidden="true"><path d="M20.6 7.2c-1.4-.7-2.9-1.1-4.4-1.4-.2.4-.4.9-.6 1.3-1.6-.2-3.2-.2-4.8 0-.2-.4-.4-.9-.6-1.3-1.5.3-3 .8-4.4 1.4-.9 3.5-.7 6.9.2 10.3 1.3.9 2.7 1.5 4.2 1.9.3-.4.6-.9.8-1.4-.4-.2-.8-.4-1.1-.6l.2-.2c2.4 1.1 5 1.1 7.4 0l.2.2c-.3.2-.7.4-1.1.6.2.5.4.9.8 1.4 1.5-.4 2.9-1 4.2-1.9 1-3.4 1.1-6.8.2-10.3Z"/><circle cx="9.2" cy="13.2" r="1.1" fill="white"/><circle cx="14.8" cy="13.2" r="1.1" fill="white"/></svg>
+            </div>
+            <div style="flex:1; min-width:260px;">
+              <h1 style="font-size: clamp(20px, 3.5vw, 28px); line-height:1.2; color:white; margin-bottom:8px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                مجتمع عصفورة على الديسكورد
+                <span style="background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.22); padding:4px 10px; border-radius:999px; font-size:11px; font-weight:800;">للدراسة ومشاركة الخبرات</span>
+              </h1>
+              <p style="color:rgba(255,255,255,0.92); font-size:14.5px; line-height:1.7; max-width:680px;">
+                مكان هادئ للمذاكرة الجماعية، مراجعة البورتفوليو، والأسئلة السريعة — بعيداً عن ضوضاء السوشيال. نلتزم بقاعدة واحدة: <strong style="color:white; background:rgba(0,0,0,0.18); padding:2px 8px; border-radius:6px;">مساعدة عملية، بلا تسويق.</strong>
+              </p>
+              <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:14px;">
+                <a href="https://discord.com/channels/1511026972120322109" target="_blank" rel="noopener noreferrer" class="discord-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#5865F2" aria-hidden="true"><path d="M20.6 7.2c-1.4-.7-2.9-1.1-4.4-1.4-.2.4-.4.9-.6 1.3-1.6-.2-3.2-.2-4.8 0-.2-.4-.4-.9-.6-1.3-1.5.3-3 .8-4.4 1.4-.9 3.5-.7 6.9.2 10.3 1.3.9 2.7 1.5 4.2 1.9.3-.4.6-.9.8-1.4-.4-.2-.8-.4-1.1-.6l.2-.2c2.4 1.1 5 1.1 7.4 0l.2.2c-.3.2-.7.4-1.1.6.2.5.4.9.8 1.4 1.5-.4 2.9-1 4.2-1.9 1-3.4 1.1-6.8.2-10.3Z"/></svg>
+                  الانضمام للسيرفر ↗
+                </a>
+                <a href="#channels" class="discord-btn discord-btn--ghost">استكشاف القنوات ↓</a>
+              </div>
+              <p style="font-size:11.5px; color:rgba(255,255,255,0.72); margin-top:10px;">
+                الرابط يفتح التطبيق/المتصفح مباشرة. إذا لم تكن عضواً، سيطلب منك قبول الدعوة أولاً — لا نشارك بياناتك.
+              </p>
+            </div>
+            <div style="background: rgba(0,0,0,0.14); border:1px solid rgba(255,255,255,0.14); border-radius:14px; padding:14px; min-width:220px; backdrop-filter: blur(8px);">
+              <div style="font-size:12px; color:rgba(255,255,255,0.8); margin-bottom:8px; font-weight:700; letter-spacing:0.04em;">لماذا تنضم؟</div>
+              <div style="display:flex; flex-direction:column; gap:8px; font-size:13px; color:white; line-height:1.5;">
+                <span style="display:flex; gap:8px; align-items:center;"><span style="width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.18);display:grid;place-items:center;font-size:11px;">✓</span> مذاكرة صامتة يومية (Pomodoro)</span>
+                <span style="display:flex; gap:8px; align-items:center;"><span style="width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.18);display:grid;place-items:center;font-size:11px;">✓</span> مراجعة كود / CV / بورتفوليو</span>
+                <span style="display:flex; gap:8px; align-items:center;"><span style="width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.18);display:grid;place-items:center;font-size:11px;">✓</span> أسئلة سريعة بدون إحراج</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <h2 style="font-size:16px; margin-bottom:12px;">📋 دليل قنوات السيرفر</h2>
+        <div style="display:flex; flex-direction:column; gap:8px;" id="channels">
+          <details class="rule-card" open>
+            <summary style="font-weight:800; cursor:pointer; font-size:14px; padding:12px;"><span role="heading" aria-level="3">🔎 ABOUT — التعريف بالسيرفر</span></summary>
+            <div style="margin-top:8px; padding:0 12px 12px; display:flex; gap:6px; flex-wrap:wrap;"><span class="channel-pill">#welcome</span><span class="channel-pill">#rules</span><span class="channel-pill">#announcements</span></div>
+          </details>
+          <details class="rule-card">
+            <summary style="font-weight:800; cursor:pointer; font-size:14px; padding:12px;"><span role="heading" aria-level="3">📚 KNOWLEDGE — المعرفة والمصادر</span></summary>
+            <div style="margin-top:8px; padding:0 12px 12px; display:flex; gap:6px; flex-wrap:wrap;"><span class="channel-pill">#official-resources</span><span class="channel-pill">#share-resources</span><span class="channel-pill">#opportunities</span></div>
+          </details>
+          <details class="rule-card">
+            <summary style="font-weight:800; cursor:pointer; font-size:14px; padding:12px;"><span role="heading" aria-level="3">💬 FOCUS & CHATS — الدراسة والمحادثة</span></summary>
+            <div style="margin-top:8px; padding:0 12px 12px; display:flex; gap:6px; flex-wrap:wrap;"><span class="channel-pill">#mixed-chat</span><span class="channel-pill">#girls-only-chat</span><span class="channel-pill">#study-help</span></div>
+            <p style="font-size:11.5px;color:var(--text-muted);margin-top:6px;padding:0 12px 12px;">🎙️ غرف صوتية: focus-room-mix • focus-room-girls • english-speaking</p>
+          </details>
+          <details class="rule-card">
+            <summary style="font-weight:800; cursor:pointer; font-size:14px; padding:12px;"><span role="heading" aria-level="3">⚙️ PROGRESS — متابعة التقدم</span></summary>
+            <div style="margin-top:8px; padding:0 12px 12px; display:flex; gap:6px; flex-wrap:wrap;"><span class="channel-pill">#daily-goals</span><span class="channel-pill">#weekly-progress</span><span class="channel-pill">#achievements</span></div>
+          </details>
+          <details class="rule-card">
+            <summary style="font-weight:800; cursor:pointer; font-size:14px; padding:12px;"><span role="heading" aria-level="3">🎯 SPECIALIZATIONS — التخصصات</span></summary>
+            <div style="margin-top:8px; padding:0 12px 12px; display:flex; gap:6px; flex-wrap:wrap;"><span class="channel-pill">#cybersecurity</span><span class="channel-pill">#programming</span><span class="channel-pill">#english-learning</span><span class="channel-pill">#design</span><span class="channel-pill">#video-editing</span></div>
+          </details>
+          <details class="rule-card">
+            <summary style="font-weight:800; cursor:pointer; font-size:14px; padding:12px;"><span role="heading" aria-level="3">👥 COMMUNITY — المجتمع</span></summary>
+            <div style="margin-top:8px; padding:0 12px 12px; display:flex; gap:6px; flex-wrap:wrap;"><span class="channel-pill">#general-chat</span><span class="channel-pill">#recommendations</span><span class="channel-pill">#useful-web</span><span class="channel-pill">#quotes</span></div>
+          </details>
+          <details class="rule-card">
+            <summary style="font-weight:800; cursor:pointer; font-size:14px; padding:12px;"><span role="heading" aria-level="3">🎮 BRAIN GAMES — ألعاب العقل</span></summary>
+            <div style="margin-top:8px; padding:0 12px 12px; display:flex; gap:6px; flex-wrap:wrap;"><span class="channel-pill">#chess-and-puzzles</span></div>
+            <p style="font-size:11.5px;color:var(--text-muted);margin-top:6px;padding:0 12px 12px;">♟️ غرفة صوتية: chess-room</p>
+          </details>
+        </div>
+
+        <!-- كيف تنضم -->
+        <div class="card" style="margin-top:18px; display:grid; grid-template-columns: 1.2fr 0.8fr; gap:20px; align-items:start;">
+          <div>
+            <h2 style="font-size:16px; margin-bottom:10px; display:flex; align-items:center; gap:8px;">🚀 كيف تنضم في 30 ثانية</h2>
+            <ol style="font-size:13.5px; color:var(--text-secondary); line-height:1.9; padding-right:18px;">
+              <li>اضغط <strong style="color:var(--text-primary);">الانضمام للسيرفر</strong> أعلاه</li>
+              <li>افتح ديسكورد (تطبيق أو متصفح) وسجّل دخول</li>
+              <li>اقرأ <strong>#rules</strong> بعناية</li>
+              <li>اختر رتبتك: 👨 <strong>Member Male</strong> أو 👩 <strong>Member Girl</strong></li>
+              <li>بعد اختيار الرتبة تُفتح جميع الأقسام تلقائياً</li>
+            </ol>
+            <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+              <a href="https://discord.com/channels/1511026972120322109" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="background:#5865F2; border-color:#5865F2;">فتح الديسكورد ↗</a>
+              <button class="btn btn--ghost" data-copy="https://discord.com/channels/1511026972120322109" data-title="رابط ديسكورد عصفورة">نسخ الرابط</button>
+            </div>
+            <p style="font-size:11.5px; color:var(--text-muted); margin-top:8px;">إذا انتهت الدعوة، تواصل معنا عبر <a href="#" data-coming-soon style="color:var(--color-primary);">تواصل معنا</a> وسنرسل لك دعوة جديدة.</p>
+          </div>
+          <div class="widget-wrap">
+            <div style="padding:12px 14px; border-bottom:1px solid var(--border-color); display:flex; align-items:center; justify-content:space-between;">
+              <span style="font-weight:800; font-size:13px; display:flex; align-items:center; gap:8px;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,0.18)"></span> معاينة حية (اختيارية)</span>
+              <span class="badge badge--muted" style="font-size:10.5px;">Widget</span>
+            </div>
+            <!-- Discord Widget — يحتاج تفعيل الـWidget من إعدادات السيرفر -->
+            <iframe
+              id="discordWidget"
+              src="https://discord.com/widget?id=1511026972120322109&theme=dark"
+              width="100%" height="300" allowtransparency="true" frameborder="0"
+              sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+              title="Discord Widget"
+              style="display:block; background: #2B2D31;"
+              loading="lazy">
+            </iframe>
+            <script>
+              (function(){
+                var w = document.getElementById('discordWidget');
+                var fb = document.getElementById('widgetFallback');
+                if(w && fb){
+                  w.addEventListener('error', function(){ w.style.display='none'; fb.style.display='block'; });
+                  // Discord widget قد لا يطلق error بل يظهر صفحة فارغة — نفحص بعد 4 ثوانٍ
+                  setTimeout(function(){
+                    try{
+                      // لا يمكن قراءة محتوى الـ iframe بسبب cross-origin، لكن إذا كان height 0 أو لم يحمل، نظهر fallback
+                      if(w && w.offsetHeight === 0) { w.style.display='none'; fb.style.display='block'; }
+                    }catch(e){}
+                  }, 4000);
+                }
+              })();
+            </script>
+            <div id="widgetFallback" style="display:none; padding:18px; text-align:center; font-size:13px; color:var(--text-muted); line-height:1.7;">
+              المعاينة غير مفعلة حالياً في السيرفر.<br>اضغط <strong style="color:var(--text-primary);">الانضمام</strong> أعلاه للدخول مباشرة.
+            </div>
+            <div style="padding:10px 14px; background:var(--bg-muted); border-top:1px solid var(--border-color); font-size:11.5px; color:var(--text-muted);">
+              إذا لم يظهر الأعضاء، فالـWidget غير مفعل — لا يؤثر على الانضمام.
+            </div>
+          </div>
+          <style>@media(max-width:860px){ .card[style*="grid-template-columns"]{ grid-template-columns:1fr !important; } }</style>
+        </div>
+
+        <!-- القوانين -->
+        <div style="margin-top:18px;">
+          <h2 style="font-size:16px; margin-bottom:10px;">📜 قوانين السيرفر</h2>
+          <div class="rules-grid">
+            <div class="rule-card"><strong style="font-size:13px;">1. الاحترام المتبادل</strong><p style="font-size:12.5px; color:var(--text-secondary); margin-top:6px; line-height:1.6;">يجب احترام جميع الأعضاء. يمنع التنمر أو الإهانة أو التمييز أو المضايقات.</p></div>
+            <div class="rule-card"><strong style="font-size:13px;">2. المحتوى المناسب</strong><p style="font-size:12.5px; color:var(--text-secondary); margin-top:6px; line-height:1.6;">يمنع نشر أي محتوى غير لائق أو مسيء أو مخالف للآداب العامة.</p></div>
+            <div class="rule-card"><strong style="font-size:13px;">3. منع السبام</strong><p style="font-size:12.5px; color:var(--text-secondary); margin-top:6px; line-height:1.6;">يمنع إغراق القنوات بالرسائل أو المنشنات أو الإيموجي أو الروابط بشكل مزعج.</p></div>
+            <div class="rule-card"><strong style="font-size:13px;">4. الالتزام بموضوع القنوات</strong><p style="font-size:12.5px; color:var(--text-secondary); margin-top:6px; line-height:1.6;">استخدم كل قناة للغرض المخصص لها وحافظ على تنظيم المحتوى.</p></div>
+            <div class="rule-card"><strong style="font-size:13px;">5. منع الإعلانات غير المصرح بها</strong><p style="font-size:12.5px; color:var(--text-secondary); margin-top:6px; line-height:1.6;">يمنع الترويج لسيرفرات أو حسابات أو منتجات دون موافقة الإدارة.</p></div>
+            <div class="rule-card"><strong style="font-size:13px;">6. حماية الخصوصية</strong><p style="font-size:12.5px; color:var(--text-secondary); margin-top:6px; line-height:1.6;">لا تشارك معلوماتك الشخصية أو معلومات الآخرين داخل السيرفر.</p></div>
+            <div class="rule-card"><strong style="font-size:13px;">7. الالتزام بتعليمات الإدارة</strong><p style="font-size:12.5px; color:var(--text-secondary); margin-top:6px; line-height:1.6;">يجب احترام قرارات الإدارة والمشرفين والتعاون معهم.</p></div>
+            <div class="rule-card"><strong style="font-size:13px;">8. استخدام غرف الدراسة بشكل صحيح</strong><p style="font-size:12.5px; color:var(--text-secondary); margin-top:6px; line-height:1.6;">غرف الدراسة مخصصة للتعلم والمناقشات المفيدة والتعاون بين الأعضاء.</p></div>
+            <div class="rule-card" style="grid-column:1/-1;"><strong style="font-size:13px;">9. مشاركة المعلومات الموثوقة فقط</strong><p style="font-size:12.5px; color:var(--text-secondary); margin-top:6px; line-height:1.6;">عند مشاركة المعلومات أو المصادر أو الفرص أو الأدوات أو النصائح، يجب أن تكون من مصادر موثوقة أو مبنية على تجربة شخصية حقيقية. يمنع نشر معلومات مضللة أو غير مؤكدة أو تقديمها على أنها حقائق دون التحقق منها.</p></div>
+          </div>
+          <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">مخالفة القوانين قد تؤدي إلى إنذار أو كتم أو إيقاف مؤقت أو طرد أو حظر دائم حسب نوع المخالفة.</p>
+        </div>
+
+        <!-- فعاليات أسبوعية — بنية فارغة جاهزة -->
+        <div class="card" style="margin-top:18px; border:1px dashed var(--border-strong); background: var(--bg-muted);">
+          <h2 style="font-size:14px; margin-bottom:8px; display:flex; align-items:center; gap:8px;">🗓️ فعاليات أسبوعية <span class="badge badge--muted" style="font-size:11px;">قريباً — بنية جاهزة</span></h3>
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; font-size:12.5px; color:var(--text-secondary);">
+            <div style="background:var(--bg-surface); border:1px solid var(--border-color); border-radius:10px; padding:10px;"><strong style="color:var(--text-primary);">الإثنين 9م</strong><br>مراجعة بورتفوليو<br><span style="color:var(--text-muted); font-size:11.5px;">فارغ — سيُملأ لاحقاً</span></div>
+            <div style="background:var(--bg-surface); border:1px solid var(--border-color); border-radius:10px; padding:10px;"><strong style="color:var(--text-primary);">الأربعاء 9م</strong><br>أسئلة منح<br><span style="color:var(--text-muted); font-size:11.5px;">فارغ — سيُملأ لاحقاً</span></div>
+            <div style="background:var(--bg-surface); border:1px solid var(--border-color); border-radius:10px; padding:10px;"><strong style="color:var(--text-primary);">الجمعة 8م</strong><br>مذاكرة جماعية<br><span style="color:var(--text-muted); font-size:11.5px;">فارغ — سيُملأ لاحقاً</span></div>
+          </div>
+          <p style="font-size:11.5px; color:var(--text-muted); margin-top:8px;">هذه البطاقات <em>فارغة عمداً</em> — تملأها أنت لاحقاً بدون إعادة بناء.</p>
+        </div>
+
+        <!-- أسئلة شائعة -->
+        <div class="card" style="margin-top:18px;">
+          <h2 style="font-size:16px; margin-bottom:12px;">❓ أسئلة شائعة</h2>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <details class="rule-card" open><summary style="font-weight:800; cursor:pointer; list-style:none;">هل الديسكورد مجاني؟</summary><p style="font-size:13px; color:var(--text-secondary); margin-top:8px; line-height:1.7;">نعم 100%. لا نطلب بينات بنكية ولا رسوم. أي طلب دفع = بلّغ فوراً.</p></details>
+            <details class="rule-card"><summary style="font-weight:800; cursor:pointer; list-style:none;">أنا مبتدئ جداً، هل أقدر أسأل؟</summary><p style="font-size:13px; color:var(--text-secondary); margin-top:8px; line-height:1.7;">أكيد. اذكر مستواك + ماذا جربت + رابط الخطأ. نرد برابط رسمي وخطوة واحدة.</p></details>
+            <details class="rule-card"><summary style="font-weight:800; cursor:pointer; list-style:none;">هل أقدر أنشر خدمتي المدفوعة؟</summary><p style="font-size:13px; color:var(--text-secondary); margin-top:8px; line-height:1.7;">لا في القنوات العامة. يوجد قناة #خدمات-مصرحة بعد مراجعة المشرفين فقط.</p></details>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-title"><span style="width:28px;height:28px; border-radius:8px; background:#FFFFFF; border:1.5px solid #FFE0E3; color:#E32027; display:grid; place-items:center; box-shadow:0 1px 3px rgba(10,10,10,0.08);"><svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span> عصفورة الويب</div>
+          <p class="footer__brand-desc">مجتمع للدراسة ومشاركة الخبرات — غرف مذاكرة، مراجعات، وأسئلة موثقة.</p>
+        </div>
+        <div>
+          <h3 class="footer__col-title">التنقل</h4>
+          <div class="footer__links">
+            <a href="../index.html" class="footer__link">الرئيسية</a>
+            <a href="courses.html" class="footer__link">مصادر الكورسات</a>
+            <a href="career-paths.html" class="footer__link">المسارات الوظيفية</a>
+            <a href="youtube.html" class="footer__link">قنوات يوتيوب</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__col-title">الدعم</h4>
+          <div class="footer__links">
+            <a href="https://discord.com/channels/1511026972120322109" target="_blank" rel="noopener noreferrer" class="footer__link">فتح الديسكورد ↗</a>
+            <a href="#" class="footer__link" data-coming-soon>قوانين المجتمع</a>
+            <a href="#" class="footer__link" data-coming-soon>تواصل معنا</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 عصفورة الويب — جميع الحقوق محفوظة</span><span>المجتمع • ديسكورد</span></div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="العودة للأعلى"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg></button>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="../js/data.js"></script>
+  <script src="../js/render.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

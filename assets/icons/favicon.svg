@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- عصفورة الويب — بدون خلفية، شكل جديد محدث 13 أكتوبر 2026 -->
+  <!-- طائر سنونو مجرد بأجنحة حادة وذيل مشقوق -->
+  <path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="#DF2531"/>
+  <!-- تفاصيل جناح — خطوط بيضاء رفيعة -->
+  <path d="M7.2 11.6C9.6 12.5 11.8 13.6 13.9 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.9"/>
+  <path d="M24.8 11.6C22.4 12.5 20.2 13.6 18.1 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.9"/>
+  <!-- جسم + ذيل مشقوق -->
+  <path d="M16 18.2V23.6" stroke="#DF2531" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M13.1 24.2H18.9" stroke="#DF2531" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M16 23.6L13.6 26M16 23.6L18.4 26" stroke="#DF2531" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

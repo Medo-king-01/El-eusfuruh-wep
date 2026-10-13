@@ -1,0 +1,136 @@
+/* ============================================
+   عصفورة الويب - هوية الألوان الرسمية
+   الأحمر #E32027 (IDAI 43) — محايدات #111111 / #F7F7F7
+   الوضع الليلي: #0F0F0F / #181818
+   ============================================ */
+:root {
+  /* — الألوان الأساسية — مستوحاة من هوية IDAI 43 — أحمر #E32027 + أبيض نقي — خلفية #F7F7F7 هادئة حسب الطلب */
+  --color-primary: #E32027;            /* الأحمر الأساسي - مطابق للملصقات (كان #DF2531) */
+  --color-primary-hover: #A31C20;      /* الأحمر الداكن - hover (كان #B81D28) */
+  --color-primary-light: #FFF0F1;      /* الأحمر الفاتح - خلفيات ناعمة (كان #FDE7E9) */
+  --color-primary-soft: #FFF5F5;       /* أحمر فاتح جدًا - تدرجات (كان #FFF1F2) */
+  --brand: #E32027;
+  --brand-d: #A31C20;
+  --brand-l: #FFF0F1;
+
+  --color-accent: #F59E0B;             /* كهرماني - تنبيه */
+  --color-accent-hover: #D97706;
+  --color-accent-light: #FEF3C7;
+
+  --color-success: #059669;
+  --color-warning: #F59E0B;
+  --color-danger: #E32027;
+
+  /* — الخلفيات - فاتح — */
+  --bg-body: #F7F7F7;                  /* رمادي فاتح - خلفية الصفحة */
+  --bg-surface: #FFFFFF;               /* أبيض - البطاقات */
+  --bg-surface-hover: #F2F2F2;
+  --bg-muted: #F7F7F7;
+  --bg-navbar: rgba(255,255,255,0.88);
+  --bg-hero: linear-gradient(135deg, #FFFFFF 0%, #FFF0F1 42%, #FFF8ED 100%);
+
+  /* — التذييل — */
+  --bg-footer: #000000;
+  --bg-footer-2: #1A1A1A;
+  --text-footer: #E5E5E5;
+  --text-footer-muted: #9A9A9A;
+  --border-footer: #1F1F1F;
+
+  /* — النصوص - فاتح — */
+  --text-primary: #111111;             /* حبري - عناوين (كان #0A0A0A - أقرب للملصقات) */
+  --text-secondary: #2B2B2B;           /* غامق - نصوص (كان #3A3A3A) */
+  --text-muted: #6B6B6B;               /* متوسط - ثانوي */
+  --text-on-primary: #FFFFFF;
+
+  /* — الحدود والظلال — */
+  --border-color: #EAEAEA;             /* فاتحة (كان #E5E5E5 - أنظف على الأبيض مثل الملصقات) */
+  --border-strong: #D4D4D4;            /* متوسطة (كان #CFCFCF) */
+  --shadow-sm: 0 1px 2px rgba(17,17,17,0.05);
+  --shadow-md: 0 4px 12px rgba(17,17,17,0.07);
+  --shadow-lg: 0 10px 30px rgba(17,17,17,0.09);
+  --shadow-navbar: 0 4px 20px rgba(17,17,17,0.06);
+  --shadow-brand: 0 4px 14px rgba(227,32,39,0.22);
+
+  /* — أنصاف الأقطار — */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* — الحاوية — */
+  --container-max: 1180px;
+  --navbar-height: 72px;
+
+  /* — الخطوط — */
+  --font-arabic: 'IBM Plex Sans Arabic', 'Tajawal', 'Cairo', system-ui, -apple-system, sans-serif;
+
+
+  /* — مقاسات ومسافات — */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* — أحجام خطوط مرنة — */
+  --text-xs: 11px;
+  --text-sm: 12.5px;
+  --text-base: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+
+  /* — ارتفاع أسطر — */
+  --leading-tight: 1.25;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.8;
+
+  /* — طبقات — */
+  --z-navbar: 50;
+  --z-overlay: 60;
+  --z-toast: 70;
+  --z-splash: 80;
+
+  /* — حركات — */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* — انتقالات — */
+  --transition: 0.2s ease;
+}
+
+/* — الوضع الليلي — */
+[data-theme="dark"] {
+  --bg-body: #0F0F0F;                  /* خلفية الصفحة ليلاً */
+  --bg-surface: #181818;               /* البطاقات 181818 */
+  --bg-surface-hover: #1E1E1E;
+  --bg-muted: #1E1E1E;
+  --bg-navbar: rgba(15,15,15,0.85);    /* ترويسة شفافة */
+  --bg-hero: linear-gradient(135deg, #0F0F0F 0%, #1A0A0B 55%, #1E1E1E 100%);
+
+  --bg-footer: #000000;
+  --bg-footer-2: #0F0F0F;
+
+  --text-primary: #F7F7F7;
+  --text-secondary: #CFCFCF;
+  --text-muted: #9A9A9A;
+  --text-footer: #E5E5E5;
+  --text-footer-muted: #8A8A8A;
+
+  --border-color: #262626;
+  --border-strong: #333333;
+  --border-footer: #242424;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.5);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.6);
+  --shadow-navbar: 0 4px 20px rgba(0,0,0,0.5);
+  --shadow-brand: 0 4px 14px rgba(227,32,39,0.28);
+
+  --color-primary-light: rgba(227,32,39,0.16);
+  --color-primary-soft: #1F0F10;
+}

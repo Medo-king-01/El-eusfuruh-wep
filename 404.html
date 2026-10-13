@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#FFFFFF" />
+<meta name="robots" content="noindex" />
+<title>الصفحة غير موجودة — عصفورة الويب</title>
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
+<link rel="stylesheet" href="/css/variables.css" />
+<link rel="stylesheet" href="/css/fonts.css" />
+<link rel="stylesheet" href="/css/base.css" />
+<link rel="stylesheet" href="/css/components.css" />
+<link rel="stylesheet" href="/css/layout.css" />
+<script>(function(){ try{ var s=localStorage.getItem('asfoura-theme'); var t=s || (window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'); document.documentElement.setAttribute('data-theme', t);}catch(e){}})();</script>
+<style>
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px 60px;
+}
+.error-page__icon { font-size: 56px; margin-bottom: 16px; }
+.error-page__code {
+  font-size: 72px;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.error-page__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.error-page__desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 28px;
+}
+.error-page__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+.error-page__links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.error-page__links a {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition);
+}
+.error-page__links a:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background: var(--bg-surface-hover);
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">تخطي إلى المحتوى الرئيسي</a>
+
+<header class="navbar" role="banner">
+  <div class="container navbar__inner">
+    <a href="/index.html" class="navbar__brand" aria-label="عصفورة الويب - الصفحة الرئيسية">
+      <span class="navbar__logo" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="22" height="22"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M7.2 11.6C9.6 12.5 11.8 13.6 13.9 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M24.8 11.6C22.4 12.5 20.2 13.6 18.1 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16 23.6L13.6 26M16 23.6L18.4 26" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="navbar__brand-text"><span class="navbar__brand-title"><span style="color:var(--color-primary)">عصفورة</span> الويب</span><span class="navbar__brand-sub">مصادر <span aria-hidden="true" style="opacity:0.5; margin:0 1px;">•</span> فرص <span aria-hidden="true" style="opacity:0.5; margin:0 1px;">•</span> مسارات</span></span>
+    </a>
+    <nav class="navbar__links" aria-label="التنقل الرئيسي">
+      <a href="/index.html" class="nav-link">الرئيسية</a>
+      <a href="/pages/courses.html" class="nav-link">مصادر الكورسات</a>
+      <a href="/pages/scholarships.html" class="nav-link">المنح والدورات</a>
+      <a href="/pages/career-paths.html" class="nav-link">المسارات الوظيفية</a>
+      <a href="/pages/youtube.html" class="nav-link">قنوات يوتيوب</a>
+      <a href="/pages/community.html" class="nav-link" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.54 0c.29 0 .52.22.54.5v19.42c0 .28-.23.51-.51.54l-5.6.7a.5.5 0 0 1-.57-.5v-1.2l.5-.06a.5.5 0 0 0 .44-.5V5.2a.5.5 0 0 0-.5-.5h-8.2a.5.5 0 0 0-.5.5v13.7c0 .25.18.46.42.5l.5.06v1.2a.5.5 0 0 1-.57.5l-5.6-.7a.52.52 0 0 1-.51-.54V.5c.02-.28.25-.5.54-.5h13.12Z"/><circle cx="9.5" cy="13.5" r="1.5"/><circle cx="14.5" cy="13.5" r="1.5"/></svg> المجتمع</a>
+    </nav>
+    <div class="navbar__search" role="search" aria-label="البحث في الموقع">
+      <label class="sr-only" for="navSearch">بحث</label>
+      <div class="search-input-wrap">
+        <input id="navSearch" class="search-input js-search-input" type="search" placeholder="ابحث عن مصادر، منح، مسارات..." autocomplete="off" aria-label="حقل البحث" /><button class="search-clear" type="button" aria-label="مسح البحث">×</button>
+        <span class="search-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg></span>
+        <span class="search-kbd" aria-hidden="true"><span>/</span> للبحث</span>
+      </div>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="تفعيل الوضع الداكن" title="الوضع الداكن">
+        <svg id="themeIconSun" class="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/></svg>
+        <svg id="themeIconMoon" class="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="icon-btn" id="favToggle" type="button" aria-label="المفضلة" title="المفضلة" style="position:relative;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 17.3l-5.4 3.2 1.4-6.1L3 9.9l6.2-.5L12 3.8l2.8 5.6 6.2.5-5 4.5 1.4 6.1z"/></svg>
+        <span class="fav-count" id="favCount" style="display:none;">0</span>
+      </button>
+      <button id="menuToggle" class="icon-btn navbar__toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu">
+        <svg id="iconMenu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+        <svg id="iconClose" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobileMenu" class="mobile-menu" aria-label="قائمة الجوال" aria-hidden="true">
+  <div class="mobile-menu__search" role="search">
+    <label class="sr-only" for="mobileSearch">بحث</label>
+    <div class="search-input-wrap">
+      <input id="mobileSearch" class="search-input js-search-input" type="search" placeholder="ابحث عن مصادر، منح، مسارات..." autocomplete="off" /><button class="search-clear" type="button" aria-label="مسح البحث">×</button>
+      <span class="search-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg></span>
+    </div>
+  </div>
+  <div class="mobile-menu__links">
+    <a href="/index.html" class="mobile-menu__link">الرئيسية <span aria-hidden="true">‹</span></a>
+    <a href="/pages/courses.html" class="mobile-menu__link">مصادر الكورسات المجانية <span>‹</span></a>
+    <a href="/pages/scholarships.html" class="mobile-menu__link">المنح والدورات المجانية <span>‹</span></a>
+    <a href="/pages/career-paths.html" class="mobile-menu__link">المسارات الوظيفية <span>‹</span></a>
+    <a href="/pages/youtube.html" class="mobile-menu__link">قنوات يوتيوب مفيدة <span>‹</span></a>
+    <a href="/pages/community.html" class="mobile-menu__link">المجتمع — ديسكورد <span>‹</span></a>
+  </div>
+</nav>
+
+<div id="searchOverlay" class="search-overlay" aria-hidden="true" role="dialog" aria-label="نافذة البحث">
+  <div class="search-overlay__panel">
+    <div class="search-overlay__header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--text-muted)"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg>
+      <input id="searchOverlayInput" class="search-overlay__input" type="search" placeholder="اكتب للبحث في المصادر والمنح والمسارات..." autocomplete="off" aria-label="البحث" /><button class="search-clear" id="searchOverlayClear" type="button" aria-label="مسح البحث" style="position:static; margin-right:8px;">×</button>
+      <button id="searchOverlayClose" class="icon-btn" type="button" aria-label="إغلاق البحث" style="width:36px;height:36px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg></button>
+    </div>
+    <div id="searchOverlayResults" class="search-overlay__body"></div>
+  </div>
+</div>
+
+<main id="main">
+  <div class="container">
+    <div class="error-page">
+      <div class="error-page__icon">🧭</div>
+      <div class="error-page__code">404</div>
+      <h1 class="error-page__title">الصفحة غير موجودة</h1>
+      <p class="error-page__desc">يبدو أن الرابط الذي تبحث عنه غير صحيح أو تم نقله. جرّب أحد الأقسام أدناه أو ابحث مباشرة.</p>
+      <div class="error-page__actions">
+        <a href="/index.html" class="btn btn--primary btn--lg">العودة للرئيسية</a>
+        <a href="/pages/courses.html" class="btn btn--ghost btn--lg">استكشاف المصادر</a>
+      </div>
+      <div class="error-page__links">
+        <a href="/pages/scholarships.html">المنح والدورات</a>
+        <a href="/pages/career-paths.html">المسارات الوظيفية</a>
+        <a href="/pages/youtube.html">قنوات يوتيوب</a>
+        <a href="/pages/community.html">المجتمع</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-title"><span style="width:28px;height:28px; border-radius:8px; background:#FFFFFF; border:1.5px solid #FFE0E3; color:#E32027; display:grid; place-items:center; box-shadow:0 1px 3px rgba(10,10,10,0.08);"><svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span> عصفورة الويب</div>
+        <p class="footer__brand-desc">منصة تجمع المصادر التعليمية المجانية والمنح والمسارات الوظيفية الموثوقة للمستخدمين في مصر — بتصميم خفيف وسريع ومتجاوب.</p>
+      </div>
+      <div>
+        <h3 class="footer__col-title">الأقسام</h3>
+        <div class="footer__links">
+          <a href="/pages/courses.html" class="footer__link">مصادر الكورسات المجانية</a>
+          <a href="/pages/scholarships.html" class="footer__link">المنح والدورات المجانية</a>
+          <a href="/pages/career-paths.html" class="footer__link">المسارات الوظيفية</a>
+          <a href="/pages/youtube.html" class="footer__link">قنوات يوتيوب مفيدة</a>
+          <a href="/pages/community.html" class="footer__link" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.54 0c.29 0 .52.22.54.5v19.42c0 .28-.23.51-.51.54l-5.6.7a.5.5 0 0 1-.57-.5v-1.2l.5-.06a.5.5 0 0 0 .44-.5V5.2a.5.5 0 0 0-.5-.5h-8.2a.5.5 0 0 0-.5.5v13.7c0 .25.18.46.42.5l.5.06v1.2a.5.5 0 0 1-.57.5l-5.6-.7a.52.52 0 0 1-.51-.54V.5c.02-.28.25-.5.54-.5h13.12Z"/><circle cx="9.5" cy="13.5" r="1.5"/><circle cx="14.5" cy="13.5" r="1.5"/></svg> مجتمع الديسكورد</a>
+          <a href="/index.html" class="footer__link">الصفحة الرئيسية</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer__col-title">معلومات</h3>
+        <div class="footer__links">
+          <a href="#" class="footer__link" data-coming-soon>عن المنصة</a>
+          <a href="#" class="footer__link" data-coming-soon>تواصل معنا</a>
+          <a href="#" class="footer__link" data-coming-soon>سياسة الخصوصية</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom"><span>© 2026 عصفورة الويب — جميع الحقوق محفوظة. صُنع في مصر 🇪🇬</span><div class="footer__legal"><span>مصادر موثوقة</span><span>•</span><span>تحديث دوري</span><span>•</span><span>مجاني بالكامل</span></div></div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="العودة للأعلى"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg></button>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="/js/data.js"></script>
+<script src="/js/render.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <meta name="description" content="مصادر الكورسات المجانية — دليل المنصات العالمية والعربية التي تقدم دورات مجانية بشهادات مجانية، مصنفة حسب الفئة ونوع الشهادة." />
+  <title>مصادر الكورسات المجانية — عصفورة الويب</title>
+
+        <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <script>(function(){ try{ var s=localStorage.getItem('asfoura-theme'); var t=s || (window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'); document.documentElement.setAttribute('data-theme', t);}catch(e){}})();</script>
+</head>
+<body>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+  
+  <div class="splash" id="splash" aria-hidden="true" role="dialog" aria-label="مرحباً">
+    <div class="splash__logo"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M7.2 11.6C9.6 12.5 11.8 13.6 13.9 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M24.8 11.6C22.4 12.5 20.2 13.6 18.1 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16 23.6L13.6 26M16 23.6L18.4 26" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="splash__title">عصفورة الويب</div>
+    <p style="font-size:13px; color:var(--text-muted);">مصادر موثوقة • فرص حقيقية • مسارات واضحة</p>
+    <button class="splash__skip" id="splashSkip" type="button">تخطي</button>
+  </div>
+  <div class="loading-bar" id="loadingBar" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+
+  <header class="navbar" role="banner">
+    <div class="container navbar__inner">
+      <a href="../index.html" class="navbar__brand" aria-label="عصفورة الويب - الرئيسية">
+        <span class="navbar__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="22" height="22"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M7.2 11.6C9.6 12.5 11.8 13.6 13.9 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M24.8 11.6C22.4 12.5 20.2 13.6 18.1 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16 23.6L13.6 26M16 23.6L18.4 26" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="navbar__brand-text"><span class="navbar__brand-title"><span style="color:var(--color-primary)">عصفورة</span> الويب</span><span class="navbar__brand-sub">مصادر <span aria-hidden="true" style="opacity:0.5; margin:0 1px;">•</span> فرص <span aria-hidden="true" style="opacity:0.5; margin:0 1px;">•</span> مسارات</span></span>
+      </a>
+
+      <nav class="navbar__links" aria-label="التنقل الرئيسي">
+        <a href="../index.html" class="nav-link">الرئيسية</a>
+        <a href="courses.html" class="nav-link is-active" aria-current="page">مصادر الكورسات</a>
+        <a href="scholarships.html" class="nav-link">المنح والدورات</a>
+        <a href="career-paths.html" class="nav-link">المسارات الوظيفية</a>
+        <a href="youtube.html" class="nav-link">قنوات يوتيوب</a>
+        <a href="community.html" class="nav-link" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.54 0c.29 0 .52.22.54.5v19.42c0 .28-.23.51-.51.54l-5.6.7a.5.5 0 0 1-.57-.5v-1.2l.5-.06a.5.5 0 0 0 .44-.5V5.2a.5.5 0 0 0-.5-.5h-8.2a.5.5 0 0 0-.5.5v13.7c0 .25.18.46.42.5l.5.06v1.2a.5.5 0 0 1-.57.5l-5.6-.7a.52.52 0 0 1-.51-.54V.5c.02-.28.25-.5.54-.5h13.12Z"/><circle cx="9.5" cy="13.5" r="1.5"/><circle cx="14.5" cy="13.5" r="1.5"/></svg> المجتمع</a>
+      </nav>
+
+      <div class="navbar__search" role="search" aria-label="البحث">
+        <label class="sr-only" for="navSearch">بحث</label>
+        <div class="search-input-wrap">
+          <input id="navSearch" class="search-input js-search-input" type="search" placeholder="ابحث في مصادر الكورسات..." autocomplete="off" /><button class="search-clear" type="button" aria-label="مسح البحث">×</button>
+          <span class="search-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg></span>
+          <span class="search-kbd" aria-hidden="true"><span>/</span> للبحث</span>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px;">
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="تبديل الوضع">
+          <svg id="themeIconSun" class="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/></svg>
+          <svg id="themeIconMoon" class="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="icon-btn" id="favToggle" type="button" aria-label="المفضلة" title="المفضلة" style="position:relative;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 17.3l-5.4 3.2 1.4-6.1L3 9.9l6.2-.5L12 3.8l2.8 5.6 6.2.5-5 4.5 1.4 6.1z"/></svg>
+          <span class="fav-count" id="favCount" style="display:none;">0</span>
+        </button>
+        <button id="menuToggle" class="icon-btn navbar__toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu">
+          <svg id="iconMenu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+          <svg id="iconClose" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true" aria-label="قائمة الجوال">
+    <div class="mobile-menu__search" role="search">
+      <div class="search-input-wrap">
+        <input class="search-input js-search-input" type="search" placeholder="ابحث في مصادر الكورسات..." autocomplete="off" /><button class="search-clear" type="button" aria-label="مسح البحث">×</button>
+        <span class="search-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg></span>
+      </div>
+    </div>
+    <div class="mobile-menu__links">
+      <a href="../index.html" class="mobile-menu__link">الرئيسية <span>‹</span></a>
+      <a href="courses.html" class="mobile-menu__link is-active">مصادر الكورسات المجانية <span>‹</span></a>
+      <a href="scholarships.html" class="mobile-menu__link">المنح والدورات المجانية <span>‹</span></a>
+      <a href="career-paths.html" class="mobile-menu__link">المسارات الوظيفية <span>‹</span></a>
+      <a href="youtube.html" class="mobile-menu__link">قنوات يوتيوب مفيدة <span>‹</span></a>
+      <a href="community.html" class="mobile-menu__link">المجتمع — ديسكورد <span>‹</span></a>
+    </div>
+  </nav>
+
+  <div id="searchOverlay" class="search-overlay" aria-hidden="true" role="dialog" aria-label="البحث">
+    <div class="search-overlay__panel">
+      <div class="search-overlay__header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--text-muted)"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg>
+        <input id="searchOverlayInput" class="search-overlay__input" type="search" placeholder="ابحث في مصادر الكورسات..." autocomplete="off" /><button class="search-clear" id="searchOverlayClear" type="button" aria-label="مسح البحث" style="position:static; margin-right:8px;">×</button>
+        <button id="searchOverlayClose" class="icon-btn" type="button" aria-label="إغلاق" style="width:36px;height:36px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg></button>
+      </div>
+      <div id="searchOverlayResults" class="search-overlay__body"></div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="مسار التنقل">
+          <a href="../index.html">الرئيسية</a><span class="breadcrumb__sep">/</span><span aria-current="page">مصادر الكورسات المجانية</span>
+        </nav>
+        <h1 class="page-header__title">
+          <span class="page-header__icon" style="background:#FFF0F1; color:#E32027; border:1px solid #FFE0E3;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 7l10-5 10 5-10 5z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></svg>
+          </span>
+          مصادر الكورسات المجانية
+        </h1>
+        <p class="page-header__desc">
+          دليل موثّق للمنصات التي تقدم دورات مجانية بشهادات مجانية (فئة A) وأخرى بشهادة مدفوعة أو مشروطة — مصنفة حسب نوع الشهادة والفئة، مع 13 منصة عربية و 25 منصة إنجليزية و 1 مختلطة + صفحتان مخصصتان (Power English و Z American English) — إجمالي <strong>39 عنصر</strong> محدثة حتى <strong>13 أكتوبر 2026</strong>.
+        </p>
+        <div class="page-header__meta">
+          <span class="badge badge--primary">25 إنجليزية</span>
+          <span class="badge badge--accent">13 عربية</span>
+          <span class="badge badge--muted">1 مختلطة — MaharaTech 🇪🇬</span>
+          <span class="badge badge--primary">إجمالي 39 عنصر (37 منصة + 2 صفحة مخصصة)</span>
+        </div>
+        <div class="page-header__meta" style="margin-top:8px;">
+          <span class="badge badge--muted">آخر تحقق 13 أكتوبر 2026</span>
+        </div>
+        <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; font-size:12.5px; color:var(--text-muted);">
+          <span style="display:flex; align-items:center; gap:6px; background:var(--bg-surface); border:1px solid var(--border-color); padding:6px 10px; border-radius:999px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg> «مجاني» قد يعني المحتوى أو الشهادة أو الامتحان — لا تفترض الاعتماد المهني</span>
+          <span style="display:flex; align-items:center; gap:6px; background:var(--color-primary-light); color:var(--color-primary); border:1px solid rgba(227,32,39,0.18); padding:6px 10px; border-radius:999px; font-weight:700;">🔍 البحث يفلتر البطاقات فورًا + نافذة البحث</span>
+        </div>
+
+        <div style="margin-top:14px; padding:14px; background:#E0F2FE; border:1.5px solid #0EA5E9; border-radius:14px; display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+          <span style="width:44px;height:44px; border-radius:11px; background:#0EA5E9; color:white; display:grid; place-items:center; font-size:20px; flex-shrink:0;">🎧</span>
+          <div style="flex:1; min-width:220px;">
+            <div style="font-weight:800; font-size:14px; color:#0C4A6E; display:flex; gap:8px; align-items:center; flex-wrap:wrap;">مميّز — Power English مع AJ Hoge <span class="badge" style="background:white; color:#0EA5E9; border:1px solid #BAE6FD; font-size:11px;">MP3 + PDF</span><span class="badge" style="background:#22C55E; color:white; border-color:#22C55E; font-size:11px;">6 أجزاء — مجاني</span></div>
+            <div style="font-size:12.5px; color:#0369A1; line-height:1.7; margin-top:4px;">طريقة اكتساب الطفل للغة: <strong>استماع مكثف</strong> → فهم سياقي → تكرار طبيعي → تحدث تدريجي — قصص/حوارات ممتعة بدل القواعد الجافة — للاستماع والمحادثة والثقة.</div>
+            <div style="font-size:11.5px; color:#0C4A6E; opacity:0.8; margin-top:4px;">صفحة مخصصة داخل المنصة — روابط MediaFire مباشرة + disclaimer + طريقة الفك</div>
+          </div>
+          <a href="power-english.html" class="btn btn--primary" style="background:#0EA5E9; border-color:#0EA5E9; white-space:nowrap; font-weight:800;">فتح الصفحة المخصصة ↗</a>
+        </div>
+
+        <div style="margin-top:10px; padding:14px; background:#FFFBEB; border:1.5px solid #FACC15; border-radius:14px; display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+          <span style="width:44px;height:44px; border-radius:11px; background:#0F172A; color:#FACC15; display:grid; place-items:center; font-size:20px; font-weight:900; flex-shrink:0; border:1px solid #1E293B;">Z</span>
+          <div style="flex:1; min-width:220px;">
+            <div style="font-weight:800; font-size:14px; color:#92400E; display:flex; gap:8px; align-items:center; flex-wrap:wrap;">مميّز — Z American English <span class="badge" style="background:#0F172A; color:#FACC15; border:1px solid #0F172A; font-size:11px;">تأسست 2020</span><span class="badge" style="background:white; color:#92400E; border:1px solid #FDE68A; font-size:11px;">شرح بالعربي</span><span class="badge" style="background:#22C55E; color:white; border-color:#22C55E; font-size:11px;">من الصفر للاحتراف</span></div>
+            <div style="font-size:12.5px; color:#92400E; line-height:1.7; margin-top:4px;">“تعلم لغة جديدة ليس مجرد كلمات… بل طريقة تفكير مختلفة” — <strong>تبسيط الإنجليزية</strong> بفيديوهات منظمة وفهم القاعدة بدل الحفظ.</div>
+            <div style="font-size:11.5px; color:#92400E; opacity:0.8; margin-top:4px;">صفحة مخصصة داخل المنصة — zamericanenglish.net — شرح بالعربية للتعلم الذاتي</div>
+          </div>
+          <a href="zamericanenglish.html" class="btn btn--primary" style="background:#0F172A; border-color:#0F172A; color:#FACC15; white-space:nowrap; font-weight:800;">فتح الصفحة المخصصة ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-bottom:0;">
+      <div class="container">
+        <div class="card" style="background:var(--bg-surface); border:1px solid var(--border-color);">
+          <h2 style="font-size:16px; margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
+            دليل الشهادات والفئات
+          </h2>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;" class="how-grid">
+            <div>
+              <h3 style="font-size:13px; color:var(--text-primary); margin-bottom:8px;">أنواع الشهادات</h3>
+              <div id="certTypes" class="grid-2" style="gap:10px;"></div>
+              <p style="font-size:11.5px; color:var(--text-muted); margin-top:10px; line-height:1.6;">لم يُعثر على موقع يمنح مؤهلاً أكاديميًا معتمدًا مجانًا — حتى Harvard CS50 وSaylor ورواق وإدراك تنص على أن شهاداتها غير معتمدة أكاديميًا.</p>
+            </div>
+            <div>
+              <h3 style="font-size:13px; color:var(--text-primary); margin-bottom:8px;">الفئات A → D</h3>
+              <div id="categoriesLegend" style="display:flex; flex-direction:column; gap:8px;"></div>
+              <div style="margin-top:12px; padding:10px 12px; background:var(--bg-muted); border:1px solid var(--border-color); border-radius:10px; font-size:12.5px; line-height:1.6; color:var(--text-secondary);">
+                <strong>الأكثر قيمة وبلا مواعيد (عالميًا):</strong> Cisco، IBM SkillsBuild، Fortinet، Google Skillshop، Oracle، freeCodeCamp، Kaggle، OpenLearn، The Forage<br>
+                <strong>عربيًا:</strong> إدراك، رواق، مهارة-تك، دروب، إدلال، سديم، معارف، تيرا كورسيز
+              </div>
+            </div>
+          </div>
+          <style>@media(max-width:860px){ .how-grid{ grid-template-columns:1fr !important; } }</style>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- فلترة متعددة الأبعاد — المنصات (3 أبعاد) -->
+        <div class="filters-group" aria-label="فلترة المنصات">
+          <div class="filters-bar" style="margin-bottom:0;">
+            <span class="filters-group__label">اللغة:</span>
+            <div class="filters-row" data-group="lang">
+              <button type="button" class="filter-pill is-active" aria-pressed="true" data-group="lang" data-value="all">الكل</button>
+              <button type="button" class="filter-pill" aria-pressed="false" data-group="lang" data-value="ar">عربي</button>
+              <button type="button" class="filter-pill" aria-pressed="false" data-group="lang" data-value="en">إنجليزي</button>
+              <button type="button" class="filter-pill" aria-pressed="false" data-group="lang" data-value="mixed">مترجم/متعدد</button>
+            </div>
+          </div>
+          <div class="filters-bar" style="margin-bottom:0;">
+            <span class="filters-group__label">الشهادة:</span>
+            <div class="filters-row" data-group="cert">
+              <button type="button" class="filter-pill is-active" aria-pressed="true" data-group="cert" data-value="all">الكل</button>
+              <button type="button" class="filter-pill" aria-pressed="false" data-group="cert" data-value="A">A — إتمام مجاني</button>
+              <button type="button" class="filter-pill" aria-pressed="false" data-group="cert" data-value="B">B — اعتماد مدفوع</button>
+              <button type="button" class="filter-pill" aria-pressed="false" data-group="cert" data-value="C">C — دعم/Audit</button>
+              <button type="button" class="filter-pill" aria-pressed="false" data-group="cert" data-value="D">D — بدون</button>
+            </div>
+          </div>
+          <div class="filters-bar">
+            <span class="filters-group__label">المستوى:</span>
+            <div class="filters-row" data-group="level">
+              <button type="button" class="filter-pill is-active" aria-pressed="true" data-group="level" data-value="all">الكل</button>
+              <button type="button" class="filter-pill" aria-pressed="false" data-group="level" data-value="beginner">للمبتدئين</button>
+              <button type="button" class="filter-pill" aria-pressed="false" data-group="level" data-value="advanced">متقدم/أكاديمي</button>
+            </div>
+            <span class="results-counter" id="platformCounter">38 من 38</span>
+            <button type="button" class="btn btn--ghost btn--sm" id="clearPlatFilters" style="margin-right:auto; display:none;">مسح الفلترة ×</button>
+          </div>
+        </div>
+
+        <div class="section-header" style="margin-top:4px;">
+          <div>
+            <h2 class="section-header__title" style="display:flex; align-items:center; gap:10px;">
+              🌍 المنصات العالمية
+              <span class="badge badge--primary">فئة A هي الأكثر قيمة للبدء فورًا</span>
+            </h2>
+            <p class="section-header__desc">شهادات مجانية بالكامل أو شبه مجانية — مع رابط رسمي وحالة التحقق. اعتمد على 18.1 (Oracle، Skillshop، HackerRank، freeCodeCamp) أولًا.</p>
+          </div>
+        </div>
+        <div id="globalGrid" class="grid-3"></div>
+
+        <div class="section-header" style="margin-top:28px;">
+          <div>
+            <h2 class="section-header__title" style="display:flex; align-items:center; gap:10px;">
+              🌙 المنصات العربية
+              <span class="badge badge--accent">إدراك ورواق ومهارة-تك هي الأفضل للبدء</span>
+            </h2>
+            <p class="section-header__desc">منصات MOOC عربية ومهارة-تك الحكومية — كلها مفتوحة من مصر. إدراك (10M+) ورواق (1.5M) هما الأكثر تنظيمًا.</p>
+          </div>
+        </div>
+        <div id="arabicGrid" class="grid-3"></div>
+
+        <div class="card" style="margin-top:20px; background:var(--color-accent-light); border-color:#FDE68A; display:flex; gap:12px; align-items:start;">
+          <span style="width:36px;height:36px; border-radius:10px; background:#F59E0B; color:white; display:grid; place-items:center; flex-shrink:0;">⚠️</span>
+          <div>
+            <h3 style="font-size:14px; color:#92400E; margin-bottom:4px;">تنبيه قبل التقديم</h3>
+            <p style="font-size:13px; color:#92400E; line-height:1.7;">راجع الرابط الرسمي لكل منصة قبل التقديم. لا تدفع رسوم «حجز مقعد» لمنحة مجانية، وتحقق من النطاق (.gov.eg / .org / .edu).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+        <!-- أسئلة شائعة -->
+        <div class="card" style="margin-top:20px;">
+          <h3 style="font-size:16px; margin-bottom:12px;">❓ أسئلة شائعة</h3>
+          <div class="faq" id="faqPlatforms"></div>
+        </div>
+
+        <!-- جداول مرجعية قابلة للطي -->
+        <details class="card" style="margin-top:16px;">
+          <summary>📑 جدول مقارن سريع — المنصات حسب الفئة <span class="badge badge--muted">اضغط للفتح</span></summary>
+          <div class="details-body" style="padding-top:16px;">
+            <div style="overflow-x:auto;">
+              <table style="width:100%; border-collapse:collapse; font-size:13px;">
+                <thead><tr style="background:var(--bg-muted);"><th style="padding:10px; border:1px solid var(--border-color); text-align:right;">المنصة</th><th style="padding:10px; border:1px solid var(--border-color);">الفئة</th><th style="padding:10px; border:1px solid var(--border-color);">الشهادة</th><th style="padding:10px; border:1px solid var(--border-color);">اللغة</th></tr></thead>
+                <tbody id="refTablePlatforms"></tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+
+        <nav class="toc" id="toc" aria-label="فهرس المحتويات"></nav>
+</main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-title">
+            <span style="width:28px;height:28px; border-radius:8px; background:#FFFFFF; border:1.5px solid #FFE0E3; color:#E32027; display:grid; place-items:center; box-shadow:0 1px 3px rgba(10,10,10,0.08);"><svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+            عصفورة الويب
+          </div>
+          <p class="footer__brand-desc">مصادر الكورسات — 39 عنصر (37 منصة + Power English + Z American English) — محدثة حتى 13 أكتوبر 2026.</p>
+        </div>
+        <div>
+          <h4 class="footer__col-title">التنقل</h4>
+          <div class="footer__links">
+            <a href="../index.html" class="footer__link">الرئيسية</a>
+            <a href="scholarships.html" class="footer__link">المنح والدورات</a>
+            <a href="career-paths.html" class="footer__link">المسارات الوظيفية</a>
+            <a href="community.html" class="footer__link" style="display:inline-flex; align-items:center; gap:6px;">💬 مجتمع الديسكورد</a>
+          </div>
+        </div>
+                <div>
+          <h4 class="footer__col-title">معلومات</h4>
+          <div class="footer__links">
+            <a href="#" class="footer__link" data-coming-soon>عن المنصة</a>
+            <a href="#" class="footer__link" data-coming-soon>تواصل معنا</a>
+            <a href="#" class="footer__link" data-coming-soon>سياسة الخصوصية</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 عصفورة الويب — جميع الحقوق محفوظة</span><span>مصادر الكورسات • مصادر موثوقة</span></div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="العودة للأعلى"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg></button>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="../js/data.js"></script>
+  <script src="../js/render.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

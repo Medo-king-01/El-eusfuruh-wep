@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <meta name="description" content="Z American English — منصة تعلم الإنجليزية بطريقة مختلفة: شرح بالعربي، فيديوهات منظمة، تركيز على الفهم بدل الحفظ. تأسست 2020 من الصفر حتى الاحتراف." />
+  <title>Z American English — تعلم الإنجليزية بطريقة تفكير مختلفة — عصفورة الويب</title>
+
+        <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <script>(function(){ try{ var s=localStorage.getItem('asfoura-theme'); var t=s || (window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'); document.documentElement.setAttribute('data-theme', t);}catch(e){}})();</script>
+  <style>
+    .z-hero{
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .z-hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(700px 320px at 90% -10%, rgba(250,204,21,0.18), transparent 60%),
+        radial-gradient(500px 300px at 10% 100%, rgba(255,255,255,0.06), transparent 60%);
+      pointer-events:none;
+    }
+    .z-hero > *{ position:relative; z-index:1; }
+    .z-badge{
+      display:inline-flex; align-items:center; gap:6px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 5px 10px; border-radius:999px; font-size:11.5px; font-weight:800;
+      backdrop-filter: blur(6px);
+    }
+    .z-badge--yellow{
+      background: #FACC15; color:#0F172A; border-color:#FACC15; font-weight:800;
+    }
+    .z-btn{
+      display:inline-flex; align-items:center; gap:8px;
+      background: #FACC15; color:#0F172A;
+      padding: 12px 18px; border-radius:999px; font-weight:800; font-size:14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+      transition: transform 0.18s, box-shadow 0.18s;
+      text-decoration:none;
+    }
+    .z-btn:hover{ transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.28); }
+    .z-btn--ghost{
+      background: rgba(255,255,255,0.10);
+      color: white;
+      border: 1.5px solid rgba(255,255,255,0.22);
+      box-shadow:none;
+    }
+    .z-btn--ghost:hover{ background: rgba(255,255,255,0.16); }
+    .z-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; }
+    @media(max-width:900px){ .z-grid{ grid-template-columns: 1fr 1fr; } }
+    @media(max-width:560px){ .z-grid{ grid-template-columns: 1fr; } }
+    .z-feature{
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 16px;
+      display:flex; gap:12px; align-items:start;
+    }
+    .z-feature__icon{
+      width:40px; height:40px; border-radius:10px;
+      display:grid; place-items:center; flex-shrink:0; font-size:18px;
+    }
+    .quote{
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-right: 4px solid #FACC15;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-style: italic;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+    .steps{ display:flex; flex-direction:column; gap:10px; }
+    .step{
+      display:flex; gap:12px; align-items:start;
+      background: var(--bg-surface); border:1px solid var(--border-color);
+      border-radius:12px; padding:12px;
+    }
+    .step__num{
+      width:28px; height:28px; border-radius:50%; background:#FACC15; color:#0F172A;
+      display:grid; place-items:center; font-weight:800; font-size:12px; flex-shrink:0;
+    }
+  </style>
+</head>
+<body>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+  
+  <div class="splash" id="splash" aria-hidden="true" role="dialog" aria-label="مرحباً">
+    <div class="splash__logo"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M7.2 11.6C9.6 12.5 11.8 13.6 13.9 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M24.8 11.6C22.4 12.5 20.2 13.6 18.1 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16 23.6L13.6 26M16 23.6L18.4 26" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="splash__title">عصفورة الويب</div>
+    <p style="font-size:13px; color:var(--text-muted);">مصادر موثوقة • فرص حقيقية • مسارات واضحة</p>
+    <button class="splash__skip" id="splashSkip" type="button">تخطي</button>
+  </div>
+  <div class="loading-bar" id="loadingBar" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+
+  <header class="navbar" role="banner">
+    <div class="container navbar__inner">
+      <a href="../index.html" class="navbar__brand" aria-label="عصفورة الويب - الرئيسية">
+        <span class="navbar__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="22" height="22"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M7.2 11.6C9.6 12.5 11.8 13.6 13.9 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M24.8 11.6C22.4 12.5 20.2 13.6 18.1 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16 23.6L13.6 26M16 23.6L18.4 26" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="navbar__brand-text"><span class="navbar__brand-title"><span style="color:var(--color-primary)">عصفورة</span> الويب</span><span class="navbar__brand-sub">مصادر <span aria-hidden="true" style="opacity:0.5; margin:0 1px;">•</span> فرص <span aria-hidden="true" style="opacity:0.5; margin:0 1px;">•</span> مسارات</span></span>
+      </a>
+
+      <nav class="navbar__links" aria-label="التنقل الرئيسي">
+        <a href="../index.html" class="nav-link">الرئيسية</a>
+        <a href="courses.html" class="nav-link">مصادر الكورسات</a>
+        <a href="scholarships.html" class="nav-link">المنح والدورات</a>
+        <a href="career-paths.html" class="nav-link">المسارات الوظيفية</a>
+        <a href="youtube.html" class="nav-link">قنوات يوتيوب</a>
+        <a href="community.html" class="nav-link" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.54 0c.29 0 .52.22.54.5v19.42c0 .28-.23.51-.51.54l-5.6.7a.5.5 0 0 1-.57-.5v-1.2l.5-.06a.5.5 0 0 0 .44-.5V5.2a.5.5 0 0 0-.5-.5h-8.2a.5.5 0 0 0-.5.5v13.7c0 .25.18.46.42.5l.5.06v1.2a.5.5 0 0 1-.57.5l-5.6-.7a.52.52 0 0 1-.51-.54V.5c.02-.28.25-.5.54-.5h13.12Z"/><circle cx="9.5" cy="13.5" r="1.5"/><circle cx="14.5" cy="13.5" r="1.5"/></svg> المجتمع</a>
+      </nav>
+
+      <div class="navbar__search" role="search" aria-label="البحث">
+        <label class="sr-only" for="navSearch">بحث</label>
+        <div class="search-input-wrap">
+          <input id="navSearch" class="search-input js-search-input" type="search" placeholder="ابحث في Z American English..." autocomplete="off" /><button class="search-clear" type="button" aria-label="مسح البحث">×</button>
+          <span class="search-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg></span>
+          <span class="search-kbd" aria-hidden="true"><span>/</span> للبحث</span>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px;">
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="تبديل الوضع">
+          <svg id="themeIconSun" class="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/></svg>
+          <svg id="themeIconMoon" class="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="icon-btn" id="favToggle" type="button" aria-label="المفضلة" title="المفضلة" style="position:relative;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 17.3l-5.4 3.2 1.4-6.1L3 9.9l6.2-.5L12 3.8l2.8 5.6 6.2.5-5 4.5 1.4 6.1z"/></svg>
+          <span class="fav-count" id="favCount" style="display:none;">0</span>
+        </button>
+        <button id="menuToggle" class="icon-btn navbar__toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu">
+          <svg id="iconMenu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+          <svg id="iconClose" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true" aria-label="قائمة الجوال">
+    <div class="mobile-menu__search" role="search">
+      <div class="search-input-wrap">
+        <input class="search-input js-search-input" type="search" placeholder="ابحث..." autocomplete="off" /><button class="search-clear" type="button" aria-label="مسح البحث">×</button>
+        <span class="search-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg></span>
+      </div>
+    </div>
+    <div class="mobile-menu__links">
+      <a href="../index.html" class="mobile-menu__link">الرئيسية <span>‹</span></a>
+      <a href="courses.html" class="mobile-menu__link">مصادر الكورسات <span>‹</span></a>
+      <a href="career-paths.html" class="mobile-menu__link">المسارات الوظيفية <span>‹</span></a>
+      <a href="career-path.html?id=english" class="mobile-menu__link">مسار الإنجليزية <span>‹</span></a>
+      <a href="zamericanenglish.html" class="mobile-menu__link is-active">Z American English <span>‹</span></a>
+      <a href="power-english.html" class="mobile-menu__link">Power English <span>‹</span></a>
+    </div>
+  </nav>
+
+  <div id="searchOverlay" class="search-overlay" aria-hidden="true" role="dialog" aria-label="البحث">
+    <div class="search-overlay__panel">
+      <div class="search-overlay__header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--text-muted)"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg>
+        <input id="searchOverlayInput" class="search-overlay__input" type="search" placeholder="ابحث..." autocomplete="off" /><button class="search-clear" id="searchOverlayClear" type="button" aria-label="مسح البحث" style="position:static; margin-right:8px;">×</button>
+        <button id="searchOverlayClose" class="icon-btn" type="button" aria-label="إغلاق" style="width:36px;height:36px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg></button>
+      </div>
+      <div id="searchOverlayResults" class="search-overlay__body"></div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="page-header" style="padding-bottom:20px;">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="مسار التنقل">
+          <a href="../index.html">الرئيسية</a><span class="breadcrumb__sep">/</span>
+          <a href="career-paths.html">المسارات</a><span class="breadcrumb__sep">/</span>
+          <a href="career-path.html?id=english">الإنجليزية</a><span class="breadcrumb__sep">/</span>
+          <span aria-current="page">Z American English</span>
+        </nav>
+
+        <div class="z-hero">
+          <div style="display:flex; gap:18px; align-items:start; flex-wrap:wrap;">
+            <div style="width:56px; height:56px; border-radius:14px; background:#FACC15; display:grid; place-items:center; flex-shrink:0; color:#0F172A; font-weight:900; font-size:26px; border:2px solid rgba(255,255,255,0.12);">
+              Z
+            </div>
+            <div style="flex:1; min-width:260px;">
+              <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;">
+                <span class="z-badge z-badge--yellow">🇺🇸 Z American English</span>
+                <span class="z-badge">تأسست 2020</span>
+                <span class="z-badge">🗣️ شرح بالعربي</span>
+                <span class="z-badge">🎥 فيديوهات منظمة</span>
+                <span class="z-badge" style="background:#22C55E; border-color:#22C55E; color:white;">من الصفر للاحتراف</span>
+              </div>
+              <h1 style="font-size: clamp(22px, 3.8vw, 30px); line-height:1.25; color:white; margin-bottom:8px;">
+                Z American English
+                <span style="font-weight:400; font-size:16px; opacity:0.92; display:block; margin-top:4px;">منصة لتعلّم الإنجليزية بطريقة مختلفة — تعلم لغة جديدة ليس مجرد كلمات… بل طريقة تفكير مختلفة</span>
+              </h1>
+              <p style="color:rgba(255,255,255,0.90); font-size:14.5px; line-height:1.8; max-width:680px;">
+                منصة تعليم لغات أونلاين <strong style="color:white;">تأسست عام 2020</strong> بهدف تبسيط الإنجليزية وإزالة تعقيد الطرق التقليدية — لتساعد <strong style="color:white;">أي شخص من الصفر حتى الاحتراف</strong> بدون حفظ جاف.
+              </p>
+              <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:14px;">
+                <a href="https://zamericanenglish.net/" target="_blank" rel="noopener noreferrer" class="z-btn">🌐 فتح الموقع الرسمي ↗</a>
+                <a href="#features" class="z-btn z-btn--ghost">كيف تعمل؟ ↓</a>
+              </div>
+              <p style="font-size:11.5px; color:rgba(255,255,255,0.70); margin-top:10px;">
+                الموقع الرسمي: <span style="color:#FACC15; font-family:monospace; direction:ltr; unicode-bidi:plaintext;">https://zamericanenglish.net/</span> — متاح للتعلم الذاتي بالعربية
+              </p>
+            </div>
+            <div style="background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:14px; padding:14px; min-width:220px; backdrop-filter: blur(8px);">
+              <div style="font-size:12px; color:rgba(255,255,255,0.8); margin-bottom:8px; font-weight:700;">لماذا يختلف؟</div>
+              <div style="display:flex; flex-direction:column; gap:8px; font-size:13px; color:white; line-height:1.5;">
+                <span style="display:flex; gap:8px; align-items:center;"><span style="width:22px;height:22px;border-radius:50%;background:#FACC15;color:#0F172A;display:grid;place-items:center;font-size:11px;font-weight:900;">✓</span> فهم قبل الحفظ</span>
+                <span style="display:flex; gap:8px; align-items:center;"><span style="width:22px;height:22px;border-radius:50%;background:#FACC15;color:#0F172A;display:grid;place-items:center;font-size:11px;font-weight:900;">✓</span> سياق عملي</span>
+                <span style="display:flex; gap:8px; align-items:center;"><span style="width:22px;height:22px;border-radius:50%;background:#FACC15;color:#0F172A;display:grid;place-items:center;font-size:11px;font-weight:900;">✓</span> تفكير بالإنجليزية</span>
+              </div>
+              <div style="margin-top:12px; display:flex; gap:6px; flex-wrap:wrap;">
+                <span class="z-badge" style="background:rgba(255,255,255,0.12);">عربي → إنجليزي</span>
+                <span class="z-badge" style="background:rgba(255,255,255,0.12);">ذاتي</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote" style="margin-top:14px;">
+          <div style="font-size:12px; color:var(--text-muted); font-weight:700; margin-bottom:4px;">💬 فلسفة المنصة</div>
+          <blockquote style="margin:0; font-size:15px; color:var(--text-primary); font-weight:600;">“تعلم لغة جديدة ليس مجرد كلمات… بل طريقة تفكير مختلفة.”</blockquote>
+          <div style="font-size:12.5px; color:var(--text-muted); margin-top:6px;">— Z American English</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:18px;">
+      <div class="container">
+
+        <!-- ما هي -->
+        <div id="about" class="card">
+          <h2 style="font-size:16px; margin-bottom:6px; display:flex; align-items:center; gap:8px;">🧠 ما هي Z American English؟</h2>
+          <p style="font-size:13.5px; color:var(--text-secondary); line-height:1.8; margin-bottom:14px;">
+            منصة تعليم لغات أونلاين تأسست عام <strong>2020</strong> — هدفها تبسيط الإنجليزية وجعلها أقرب لطريقة تفكير المتعلم نفسه.
+          </p>
+          <div class="z-grid">
+            <div class="z-feature">
+              <div class="z-feature__icon" style="background:#FEF3C7; color:#92400E; border:1px solid #FDE68A;">✨</div>
+              <div><div style="font-weight:800; font-size:13.5px;">تبسيط تعلّم الإنجليزية</div><div style="font-size:12.5px; color:var(--text-secondary); line-height:1.6; margin-top:4px;">شرح بسيط بدون تعقيد — من الحروف إلى الجمل الكاملة.</div></div>
+            </div>
+            <div class="z-feature">
+              <div class="z-feature__icon" style="background:#E0F2FE; color:#0369A1; border:1px solid #BAE6FD;">🧹</div>
+              <div><div style="font-weight:800; font-size:13.5px;">إزالة صعوبة الطرق التقليدية</div><div style="font-size:12.5px; color:var(--text-secondary); line-height:1.6; margin-top:4px;">لا حفظ عشوائي — فهم القاعدة واستخدامها مباشرة.</div></div>
+            </div>
+            <div class="z-feature">
+              <div class="z-feature__icon" style="background:#DCFCE7; color:#065F46; border:1px solid #BBF7D0;">🚀</div>
+              <div><div style="font-weight:800; font-size:13.5px;">من الصفر حتى الاحتراف</div><div style="font-size:12.5px; color:var(--text-secondary); line-height:1.6; margin-top:4px;">مسار متدرج لأي شخص — مهما كان مستواه.</div></div>
+            </div>
+          </div>
+          <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+            <span class="badge badge--muted">تأسيس 2020</span>
+            <span class="badge" style="background:#FFFBEB; color:#92400E; border:1px solid #FDE68A;">للجميع</span>
+            <span class="badge badge--muted">تعلم ذاتي</span>
+            <a href="https://zamericanenglish.net/" target="_blank" rel="noopener noreferrer" class="badge" style="background:#0F172A; color:#FACC15; border-color:#0F172A; text-decoration:none;">zamericanenglish.net ↗</a>
+          </div>
+        </div>
+
+        <!-- أهم المميزات -->
+        <div id="features" class="card" style="margin-top:14px;">
+          <h2 style="font-size:16px; margin-bottom:12px; display:flex; align-items:center; gap:8px;">🚀 أهم المميزات</h2>
+          <div class="z-grid">
+            <div class="z-feature" style="flex-direction:column; gap:8px; border-top:3px solid #FACC15;">
+              <div style="display:flex; gap:10px; align-items:center;">
+                <div class="z-feature__icon" style="background:#FFFBEB; color:#92400E; border:1px solid #FDE68A;">🗣️</div>
+                <div style="font-weight:800; font-size:13.5px;">الشرح باللغة الأم</div>
+              </div>
+              <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <span class="badge" style="background:#FFFBEB; color:#92400E; border:1px solid #FDE68A;">عربي → إنجليزي</span>
+                <span class="badge badge--muted">فهم أسرع</span>
+              </div>
+              <ul style="font-size:12.5px; color:var(--text-secondary); line-height:1.7; padding-right:16px; margin:0;">
+                <li><strong>عربي يتعلم إنجليزي بالعربي</strong> — لا ترجمة ذهنية مرهقة</li>
+                <li>الهدف: <strong>فهم أسرع بدون تعقيد</strong></li>
+              </ul>
+              <p style="font-size:11.5px; color:var(--text-muted); background:var(--bg-muted); border:1px solid var(--border-color); padding:6px 8px; border-radius:8px;">مثالي للمبتدئ الحقيقي — يفهم القاعدة بلغته أولاً ثم يطبقها بالإنجليزية.</p>
+            </div>
+            <div class="z-feature" style="flex-direction:column; gap:8px; border-top:3px solid #0EA5E9;">
+              <div style="display:flex; gap:10px; align-items:center;">
+                <div class="z-feature__icon" style="background:#E0F2FE; color:#0369A1; border:1px solid #BAE6FD;">🎥</div>
+                <div style="font-weight:800; font-size:13.5px;">فيديوهات تعليمية</div>
+              </div>
+              <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <span class="badge" style="background:#E0F2FE; color:#0369A1; border:1px solid #BAE6FD;">منظمة</span>
+                <span class="badge badge--muted">ذاتي</span>
+              </div>
+              <ul style="font-size:12.5px; color:var(--text-secondary); line-height:1.7; padding-right:16px; margin:0;">
+                <li>دروس <strong>منظمة وسهلة المتابعة</strong></li>
+                <li>مناسبة للـ <strong>تعلم الذاتي</strong> — توقف وأعد متى شئت</li>
+              </ul>
+              <p style="font-size:11.5px; color:var(--text-muted); background:var(--bg-muted); border:1px solid var(--border-color); padding:6px 8px; border-radius:8px;">تابع بالترتيب — كل فيديو يبني على الذي قبله، لا تقفز.</p>
+            </div>
+            <div class="z-feature" style="flex-direction:column; gap:8px; border-top:3px solid #22C55E;">
+              <div style="display:flex; gap:10px; align-items:center;">
+                <div class="z-feature__icon" style="background:#DCFCE7; color:#065F46; border:1px solid #BBF7D0;">🧠</div>
+                <div style="font-weight:800; font-size:13.5px;">تركيز على الفهم</div>
+              </div>
+              <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <span class="badge" style="background:#DCFCE7; color:#065F46; border:1px solid #BBF7D0;">فهم لا حفظ</span>
+                <span class="badge badge--muted">سياق عملي</span>
+              </div>
+              <ul style="font-size:12.5px; color:var(--text-secondary); line-height:1.7; padding-right:16px; margin:0;">
+                <li><strong>فهم القاعدة بدل الحفظ</strong> — لماذا هكذا؟</li>
+                <li><strong>استخدام اللغة في سياق عملي</strong> — جُمل حقيقية</li>
+              </ul>
+              <p style="font-size:11.5px; color:var(--text-muted); background:var(--bg-muted); border:1px solid var(--border-color); padding:6px 8px; border-radius:8px;">احفظ المعنى والاستخدام — لا تحفظ القاعدة كجدول.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- لماذا هذا مهم -->
+        <div class="card" style="margin-top:14px; border:1.5px solid #FACC15; background:#FFFBEB;">
+          <h2 style="font-size:16px; margin-bottom:10px; display:flex; align-items:center; gap:8px; color:#92400E;">🌐 لماذا هذا مهم الآن؟</h2>
+          <div class="z-grid">
+            <div style="background:white; border:1px solid #FDE68A; border-radius:12px; padding:14px; text-align:center;">
+              <div style="font-size:24px;">💼</div>
+              <div style="font-weight:800; font-size:14px; color:#92400E; margin-top:6px;">اللغة = فرصة عمل</div>
+              <div style="font-size:12.5px; color:#92400E; opacity:0.85; margin-top:4px; line-height:1.6;">أغلب الوظائف والمنح تطلب إنجليزية — حتى التقنية.</div>
+            </div>
+            <div style="background:white; border:1px solid #FDE68A; border-radius:12px; padding:14px; text-align:center;">
+              <div style="font-size:24px;">🌍</div>
+              <div style="font-weight:800; font-size:14px; color:#92400E; margin-top:6px;">اللغة = تواصل عالمي</div>
+              <div style="font-size:12.5px; color:#92400E; opacity:0.85; margin-top:4px; line-height:1.6;">محتوى، توثيق، مجتمعات المطورين — كلها بالإنجليزية.</div>
+            </div>
+            <div style="background:white; border:1px solid #FDE68A; border-radius:12px; padding:14px; text-align:center;">
+              <div style="font-size:24px;">🧩</div>
+              <div style="font-weight:800; font-size:14px; color:#92400E; margin-top:6px;">اللغة = مهارة أساسية</div>
+              <div style="font-size:12.5px; color:#92400E; opacity:0.85; margin-top:4px; line-height:1.6;">مثل الحاسوب — لا غنى عنها في أي مسار.</div>
+            </div>
+          </div>
+          <div style="margin-top:14px; padding:10px 12px; background:white; border:1px solid #FDE68A; border-radius:10px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+            <span style="width:32px;height:32px; border-radius:50%; background:#FEF3C7; color:#92400E; display:grid; place-items:center; flex-shrink:0;">⚠️</span>
+            <div style="flex:1; min-width:220px;">
+              <div style="font-weight:800; font-size:13px; color:#92400E;">لكن المشكلة:</div>
+              <div style="font-size:12.5px; color:#92400E; line-height:1.6;"><strong>كثير يبدأون بشكل خاطئ أو معقد</strong> — حفظ قوائم كلمات، قواعد منفصلة عن السياق، ثم يفقدون الحماس.</div>
+            </div>
+            <span class="badge" style="background:#0F172A; color:#FACC15; border-color:#0F172A;">الحل: ابدأ بالفهم والسياق</span>
+          </div>
+        </div>
+
+        <!-- الخلاصة -->
+        <div class="card" style="margin-top:14px; background: var(--bg-surface); border:1.5px solid #0F172A;">
+          <div style="display:flex; gap:12px; align-items:start; flex-wrap:wrap;">
+            <div style="width:44px;height:44px; border-radius:11px; background:#0F172A; color:#FACC15; display:grid; place-items:center; font-size:20px; flex-shrink:0;">💡</div>
+            <div style="flex:1; min-width:240px;">
+              <h2 style="font-size:16px; color:var(--text-primary);">الخلاصة</h2>
+              <p style="font-size:13.5px; color:var(--text-secondary); line-height:1.8; margin-top:6px;">
+                <strong>Z American English تحاول تبسيط تعلم الإنجليزية</strong> وجعله أقرب لطريقة تفكير المتعلم نفسه — <strong>شرح بلغتك، فيديو منظم، فهم قبل حفظ، وتطبيق في سياق حقيقي</strong>. ابدأ من الصفر بترتيب، ولا تقفز.
+              </p>
+              <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+                <span class="badge" style="background:#0F172A; color:#FACC15; border-color:#0F172A;">طريقة تفكير مختلفة</span>
+                <span class="badge badge--muted">من الصفر للاحتراف</span>
+                <span class="badge badge--muted">2020 → الآن</span>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px; min-width:180px;">
+              <a href="https://zamericanenglish.net/" target="_blank" rel="noopener noreferrer" class="z-btn" style="justify-content:center; width:100%;">🌐 zamericanenglish.net ↗</a>
+              <button type="button" class="btn btn--ghost" style="width:100%; font-size:12.5px;" data-copy="https://zamericanenglish.net/" data-title="Z American English">نسخ الرابط</button>
+              <a href="career-path.html?id=english" class="btn btn--ghost" style="width:100%;">→ مسار الإنجليزية</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- كيف تبدأ -->
+        <div class="card" style="margin-top:14px;">
+          <h2 style="font-size:16px; margin-bottom:10px;">🚀 كيف تبدأ بذكاء مع Z</h2>
+          <div class="steps">
+            <div class="step"><div class="step__num">1</div><div><div style="font-weight:800; font-size:13.5px;">ابدأ من المستوى 1 بترتيب</div><div style="font-size:12.5px; color:var(--text-secondary);">لا تقفز — كل درس يبني على السابق.</div></div></div>
+            <div class="step"><div class="step__num">2</div><div><div style="font-weight:800; font-size:13.5px;">شاهد + دوّن 3 جُمل فقط</div><div style="font-size:12.5px; color:var(--text-secondary);">اكتب الجملة كاملة بسياقها، ليس كلمة مفردة.</div></div></div>
+            <div class="step"><div class="step__num">3</div><div><div style="font-weight:800; font-size:13.5px;">طبّق بصوت عالٍ</div><div style="font-size:12.5px; color:var(--text-secondary);">قل الجملة 5 مرات — قلّد النطق والإيقاع.</div></div></div>
+            <div class="step"><div class="step__num">4</div><div><div style="font-weight:800; font-size:13.5px;">راجع غدًا قبل الجديد</div><div style="font-size:12.5px; color:var(--text-secondary);">20 دقيقة مراجعة تغني عن ساعتين حفظ.</div></div></div>
+          </div>
+          <div style="margin-top:12px; padding:10px 12px; background:#FFFBEB; border:1px solid #FDE68A; border-radius:10px; font-size:12.5px; color:#92400E; line-height:1.7;">
+            قاعدة Z الذهبية: <strong>فهم القاعدة + جملة سياقية واحدة</strong> تثبت أكثر من حفظ 10 كلمات منفصلة.
+          </div>
+        </div>
+
+        <!-- الرسمية + ربط Power English -->
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px;">
+          <div class="card" style="border:1px solid #FACC15; background:#FFFBEB;">
+            <h3 style="font-size:14px; color:#92400E; margin-bottom:6px; display:flex; align-items:center; gap:8px;">🔗 الموقع الرسمي</h3>
+            <p style="font-size:12.5px; color:#92400E; line-height:1.7;">كل الدروس والمستويات على الموقع الرسمي — متاح للتعلم الذاتي.</p>
+            <a href="https://zamericanenglish.net/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" style="width:100%; margin-top:10px; background:white; border-color:#FDE68A; color:#92400E; font-weight:800;">zamericanenglish.net ↗</a>
+            <div style="display:flex; gap:6px; margin-top:8px; flex-wrap:wrap;">
+              <button type="button" class="btn btn--ghost btn--sm" data-copy="https://zamericanenglish.net/" data-title="Z American English">نسخ الرابط</button>
+              <span class="badge badge--muted" style="font-size:11px;">تأسست 2020</span>
+            </div>
+          </div>
+          <div class="card" style="background:var(--bg-surface); border-color:var(--border-color);">
+            <h3 style="font-size:14px; margin-bottom:6px; display:flex; align-items:center; gap:8px;">🎧 ادمج مع Power English</h3>
+            <p style="font-size:12.5px; color:var(--text-secondary); line-height:1.7;"><strong>Z</strong> للشرح بالعربي والفهم — <strong>Power English</strong> للاستماع المكثف والمحادثة بطلاقة.</p>
+            <div style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;">
+              <a href="power-english.html" class="btn btn--primary" style="background:#0EA5E9; border-color:#0EA5E9; flex:1; justify-content:center;">Power English ↗</a>
+              <a href="career-path.html?id=english" class="btn btn--ghost" style="flex:1; justify-content:center;">مسار الإنجليزية</a>
+            </div>
+            <p style="font-size:11px; color:var(--text-muted); margin-top:6px;">مسار الإنجليزية يجمع الاثنين — 20 دقيقة يوميًا لكل منهما.</p>
+          </div>
+        </div>
+        <style>@media(max-width:860px){ div[style*="grid-template-columns: 1fr 1fr"]{ grid-template-columns:1fr !important; } }</style>
+
+        <!-- FAQ -->
+        <div class="card" style="margin-top:14px;">
+          <h2 style="font-size:15px; margin-bottom:10px;">❓ أسئلة سريعة</h2>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <details class="card" style="margin:0; padding:12px;" open><summary style="font-weight:800; cursor:pointer;">هل أبدأ بـ Z أم Power English؟</summary><p style="font-size:12.5px; color:var(--text-secondary); margin-top:8px; line-height:1.7;"><strong>ابدأ بـ Z</strong> إذا كنت صفر — شرح بالعربي وفهم القاعدة. انتقل لـ <strong>Power English</strong> عندما تستطيع فهم 60% من الاستماع.</p></details>
+            <details class="card" style="margin:0; padding:12px;"><summary style="font-weight:800; cursor:pointer;">هل أحتاج حفظ كلمات كثيرة؟</summary><p style="font-size:12.5px; color:var(--text-secondary); margin-top:8px; line-height:1.7;">لا. احفظ <strong>3 جُمل سياقية يوميًا</strong> وستبني حصيلة أقوى من 20 كلمة منفصلة.</p></details>
+            <details class="card" style="margin:0; padding:12px;"><summary style="font-weight:800; cursor:pointer;">هل المنصة مجانية؟</summary><p style="font-size:12.5px; color:var(--text-secondary); margin-top:8px; line-height:1.7;">المحتوى الأساسي مجاني على الموقع — راجع <a href="https://zamericanenglish.net/" target="_blank" rel="noopener noreferrer" style="color:#0F172A; text-decoration:underline; font-weight:700;">zamericanenglish.net</a> للتفاصيل الحالية.</p></details>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px; display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+          <span style="width:36px;height:36px; border-radius:10px; background:#FACC15; color:#0F172A; border:1px solid #FDE68A; display:grid; place-items:center; font-weight:900;">Z</span>
+          <div style="flex:1; min-width:200px;"><div style="font-weight:800; font-size:14px;">جاهز للانطلاق؟</div><div style="font-size:12.5px; color:var(--text-secondary);">افتح الموقع الرسمي وابدأ أول درس اليوم.</div></div>
+          <a href="https://zamericanenglish.net/" target="_blank" rel="noopener noreferrer" class="z-btn">🌐 فتح الموقع ↗</a>
+          <a href="career-path.html?id=english" class="btn btn--ghost">مسار الإنجليزية</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-title"><span style="width:28px;height:28px; border-radius:8px; background:#0F172A; border:1px solid #1E293B; color:#FACC15; display:grid; place-items:center; font-weight:900; font-size:13px;">Z</span> عصفورة الويب</div>
+          <p class="footer__brand-desc">Z American English — شرح بالعربي • فيديوهات منظمة • فهم بدل الحفظ — تأسست 2020</p>
+        </div>
+        <div>
+          <h3 class="footer__col-title">التنقل</h4>
+          <div class="footer__links">
+            <a href="../index.html" class="footer__link">الرئيسية</a>
+            <a href="courses.html" class="footer__link">مصادر الكورسات</a>
+            <a href="career-path.html?id=english" class="footer__link">مسار الإنجليزية</a>
+            <a href="power-english.html" class="footer__link">Power English</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__col-title">روابط</h4>
+          <div class="footer__links">
+            <a href="https://zamericanenglish.net/" target="_blank" rel="noopener noreferrer" class="footer__link">الموقع الرسمي ↗</a>
+            <a href="#features" class="footer__link">المميزات</a>
+            <a href="#" class="footer__link" data-coming-soon>تواصل معنا</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 عصفورة الويب — Z American English</span><span>من الصفر للاحتراف • 2020</span></div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="العودة للأعلى"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg></button>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="../js/data.js"></script>
+  <script src="../js/render.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

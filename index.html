@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="color-scheme" content="light dark" />
+ <meta name="theme-color" content="#FFFFFF" />
+ <meta name="description" content="عصفورة الويب — منصة تجمع المصادر التعليمية المجانية والمنح والمسارات الوظيفية الموثوقة للمستخدمين في مصر في مكان واحد." />
+ <meta property="og:type" content="website" />
+ <meta property="og:title" content="عصفورة الويب — المصادر والفرص والمسارات في مكان واحد" />
+ <meta property="og:description" content="منصة تجمع المصادر التعليمية المجانية والمنح والمسارات الوظيفية الموثوقة للمستخدمين في مصر." />
+ <meta property="og:image" content="assets/icons/favicon.svg" />
+ <meta property="og:locale" content="ar_EG" />
+ <meta name="twitter:card" content="summary" />
+ <meta name="twitter:title" content="عصفورة الويب — المصادر والفرص والمسارات" />
+ <meta name="twitter:description" content="منصة تجمع المصادر التعليمية المجانية والمنح والمسارات الوظيفية الموثوقة لمصر." />
+ <title>عصفورة الويب — المصادر والفرص والمسارات في مكان واحد</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+ <link rel="stylesheet" href="css/variables.css" />
+<link rel="stylesheet" href="css/fonts.css" />
+ <link rel="stylesheet" href="css/base.css" />
+ <link rel="stylesheet" href="css/components.css" />
+ <link rel="stylesheet" href="css/layout.css" />
+ <script>(function(){ try{ var s=localStorage.getItem('asfoura-theme'); var t=s || (window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'); document.documentElement.setAttribute('data-theme', t);}catch(e){}})();</script>
+ <style>
+  /* ===== Landing — بسيط + لمسة IDAI 43 (أحمر #E32027) ===== */
+  /* Hero مبسط بمساحات واسعة + بقع حمراء عضوية خفيفة 6-7% كما في الملصقات */
+  .hero--simple{
+    position:relative;
+    padding: 64px 0 56px;
+    background: var(--bg-body);
+    border-bottom: 1px solid var(--border-color);
+    overflow:hidden;
+  }
+  /* تدرج خفيف جداً + بقع عضوية */
+  .hero--simple::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(700px 380px at 50% -10%, rgba(227,32,39,0.07), transparent 65%),
+      radial-gradient(600px 300px at 90% 100%, rgba(245,158,11,0.04), transparent 65%);
+    pointer-events:none;
+  }
+  [data-theme="dark"] .hero--simple::before{
+    background:
+      radial-gradient(700px 380px at 50% -10%, rgba(227,32,39,0.10), transparent 65%),
+      radial-gradient(600px 300px at 90% 100%, rgba(245,158,11,0.05), transparent 65%);
+  }
+  /* بقع حمراء عضوية في الزوايا — مثل الملصقات (شفافية 6-7% فقط) */
+  .hero-blob{
+    position:absolute;
+    background:#E32027;
+    pointer-events:none;
+    z-index:0;
+  }
+  .hero-blob--tr{
+    width:110px;height:74px;
+    top:-22px; right:-18px;
+    border-radius: 62% 38% 58% 42% / 48% 62% 38% 52%;
+    opacity:.07;
+    transform:rotate(-8deg);
+  }
+  .hero-blob--bl{
+    width:88px;height:62px;
+    bottom:-18px; left:-14px;
+    border-radius: 55% 45% 42% 58% / 58% 42% 58% 42%;
+    opacity:.06;
+    transform:rotate(10deg);
+  }
+  [data-theme="dark"] .hero-blob{ opacity:.09; }
+  .hero-simple__inner{
+    position:relative;
+    z-index:1;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align:center;
+  }
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:6px 14px;
+    border-radius:999px;
+    background: #FFF0F1;
+    border: 1px solid #FFE0E3;
+    font-size: 12px;
+    font-weight: 700;
+    color: #A31C20;
+    letter-spacing: 0.02em;
+  }
+  [data-theme="dark"] .hero-badge{
+    background: rgba(227,32,39,0.14);
+    border-color: rgba(227,32,39,0.22);
+    color: #FF9AA1;
+  }
+  .hero-badge-dot{
+    width:7px; height:7px;
+    border-radius:50%;
+    background:#22c55e;
+    box-shadow: 0 0 0 3px rgba(34,197,94,0.14);
+  }
+  .hero-title{
+    font-size: clamp(30px, 4.5vw, 42px);
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 18px 0 14px;
+    color: var(--text-primary);
+  }
+  /* كتلة حمراء للنص المميز — كما في الملصقات: Your Brand! / CREATIVE POST */
+  .hero-title span{
+    background: #E32027;
+    color: #fff;
+    font-weight: 800;
+    padding: 2px 10px;
+    border-radius: 8px;
+    display:inline-block;
+    transform: rotate(-0.6deg);
+    box-shadow: 0 2px 8px rgba(227,32,39,0.18);
+  }
+  [data-theme="dark"] .hero-title span{
+    background:#E32027;
+    box-shadow: 0 2px 10px rgba(227,32,39,0.30);
+  }
+  /* بدون تدرج نصي قوي — أهدأ للعين */
+  .hero-desc{
+    font-size: clamp(15px, 1.8vw, 16.5px);
+    line-height: 1.95;
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin: 0 auto;
+    font-weight: 400;
+  }
+  .hero-desc strong{ color: var(--text-primary); font-weight: 700; }
+  .hero-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top: 28px;
+  }
+  .btn--lg{ padding:13px 24px; font-size:14.5px; border-radius:12px; font-weight:700; }
+  .btn--lg.btn--primary{ box-shadow: 0 4px 14px rgba(227,32,39,0.18); }
+  .btn--lg.btn--primary:hover{ box-shadow: 0 6px 20px rgba(227,32,39,0.24); }
+  .hero-trust{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top: 22px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+  .hero-trust-item{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background: transparent;
+    border: none;
+    padding: 4px 8px;
+    color: var(--text-muted);
+  }
+  .hero-trust-item svg{ opacity:0.7; }
+
+  /* شريط إحصائيات خفيف — نصي بدون بطاقات ثقيلة */
+  .stats-simple{
+    display:flex;
+    justify-content:center;
+    gap:28px;
+    flex-wrap:wrap;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+    font-size: 13.5px;
+    color: var(--text-muted);
+  }
+  .stats-simple b{ color: var(--text-primary); font-size:15px; font-weight:800; }
+  .stats-simple span{ display:inline-flex; align-items:center; gap:8px; }
+  .stats-simple i{ width:3px; height:3px; border-radius:50%; background: var(--border-strong); display:inline-block; }
+
+  /* قسم الأقسام الرئيسية — مسافات أوسع، بطاقات أهدأ */
+  .section--landing{ padding: 40px 0 48px; }
+  .section-header--simple{ text-align:center; max-width:640px; margin:0 auto 28px; }
+  .section-header--simple .section-header__title{
+    font-size: clamp(20px, 2.8vw, 24px);
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .section-header--simple .section-header__desc{
+    font-size:14.5px;
+    line-height:1.85;
+    color: var(--text-secondary);
+  }
+  .section-cards{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:20px;
+  }
+  @media(max-width:860px){ .section-cards{ grid-template-columns:1fr; gap:16px; } }
+  .landing-card{
+    border: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 22px;
+    background: var(--bg-surface);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .landing-card:hover{
+    transform:none;
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-sm);
+  }
+  /* البطاقات الأهم — أوسع بصرياً (حد أحمر خفيف وظل) */
+  .landing-card--featured{
+    border: 1.5px solid rgba(227,32,39,0.16);
+    border-top: 1.5px solid rgba(227,32,39,0.16);
+    box-shadow: 0 2px 10px rgba(227,32,39,0.06);
+    position:relative;
+  }
+  .landing-card--featured::before{
+    content:"";
+    position:absolute;
+    top:0; right:18px; left:18px;
+    height:3px;
+    background: linear-gradient(90deg, #E32027 0%, #FF6B6B 100%);
+    border-radius: 0 0 6px 6px;
+    opacity:0.95;
+  }
+  .landing-card--featured:hover{
+    border-color: rgba(227,32,39,0.28);
+    box-shadow: 0 6px 18px rgba(227,32,39,0.10);
+  }
+  /* البطاقات الثانوية — رمادية هادئة */
+  .landing-card--muted .card__icon{
+    background: var(--bg-muted) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-muted) !important;
+  }
+  .landing-card .card__icon{
+    width:40px; height:40px;
+    border-radius:10px;
+    display:grid; place-items:center;
+    margin-bottom:12px;
+  }
+  .landing-card .card__title{ font-size:16.5px; margin-bottom:6px; }
+  .landing-card .card__desc{
+    font-size:14px;
+    line-height:1.85;
+    color: var(--text-secondary);
+  }
+  /* إزالة reveal الحاد — ظهور ناعم */
+  .reveal{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{ opacity:0; transform: translateY(8px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.is-visible{ opacity:1; transform:none; }
+  }
+
+  /* CTA بسيط جداً — خلفية فاتحة بدلاً من تدرج أحمر قوي */
+  .cta-simple{
+    margin-top: 8px;
+    padding: 28px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .cta-simple h3{ font-size:18px; margin-bottom:6px; }
+  .cta-simple p{ font-size:13.5px; line-height:1.8; color:var(--text-secondary); max-width:520px; }
+
+  /* تحسين قراءة عام */
+  p, li{ line-height:1.85; }
+ </style>
+</head>
+<body>
+ <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+ <div class="splash" id="splash" aria-hidden="true" role="dialog" aria-label="مرحباً">
+   <div class="splash__logo"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M7.2 11.6C9.6 12.5 11.8 13.6 13.9 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M24.8 11.6C22.4 12.5 20.2 13.6 18.1 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16 23.6L13.6 26M16 23.6L18.4 26" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+   <div class="splash__title">عصفورة الويب</div>
+   <p style="font-size:13px; color:var(--text-muted);">مصادر موثوقة • فرص حقيقية • مسارات واضحة</p>
+   <button class="splash__skip" id="splashSkip" type="button">تخطي</button>
+ </div>
+ <div class="loading-bar" id="loadingBar" aria-hidden="true"></div>
+ <a class="skip-link" href="#main">تخطي إلى المحتوى الرئيسي</a>
+ <header class="navbar" role="banner">
+   <div class="container navbar__inner">
+     <a href="index.html" class="navbar__brand" aria-label="عصفورة الويب - الصفحة الرئيسية">
+       <span class="navbar__logo" aria-hidden="true">
+         <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="22" height="22"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M7.2 11.6C9.6 12.5 11.8 13.6 13.9 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M24.8 11.6C22.4 12.5 20.2 13.6 18.1 14.9" stroke="white" stroke-width="0.95" stroke-linecap="round" opacity="0.95"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16 23.6L13.6 26M16 23.6L18.4 26" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg>
+       </span>
+       <span class="navbar__brand-text"><span class="navbar__brand-title"><span style="color:var(--color-primary)">عصفورة</span> الويب</span><span class="navbar__brand-sub">مصادر <span aria-hidden="true" style="opacity:0.5; margin:0 1px;">•</span> فرص <span aria-hidden="true" style="opacity:0.5; margin:0 1px;">•</span> مسارات</span></span>
+     </a>
+     <nav class="navbar__links" aria-label="التنقل الرئيسي">
+       <a href="index.html" class="nav-link is-active" aria-current="page">الرئيسية</a>
+       <a href="pages/courses.html" class="nav-link">مصادر الكورسات</a>
+       <a href="pages/scholarships.html" class="nav-link">المنح والدورات</a>
+       <a href="pages/career-paths.html" class="nav-link">المسارات الوظيفية</a>
+       <a href="pages/youtube.html" class="nav-link">قنوات يوتيوب</a>
+        <a href="pages/community.html" class="nav-link" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.54 0c.29 0 .52.22.54.5v19.42c0 .28-.23.51-.51.54l-5.6.7a.5.5 0 0 1-.57-.5v-1.2l.5-.06a.5.5 0 0 0 .44-.5V5.2a.5.5 0 0 0-.5-.5h-8.2a.5.5 0 0 0-.5.5v13.7c0 .25.18.46.42.5l.5.06v1.2a.5.5 0 0 1-.57.5l-5.6-.7a.52.52 0 0 1-.51-.54V.5c.02-.28.25-.5.54-.5h13.12Z"/><circle cx="9.5" cy="13.5" r="1.5"/><circle cx="14.5" cy="13.5" r="1.5"/></svg> المجتمع</a>
+     </nav>
+     <div class="navbar__search" role="search" aria-label="البحث في الموقع">
+       <label class="sr-only" for="navSearch">بحث</label>
+       <div class="search-input-wrap">
+         <input id="navSearch" class="search-input js-search-input" type="search" placeholder="ابحث عن مصادر، منح، مسارات..." autocomplete="off" aria-label="حقل البحث" /><button class="search-clear" type="button" aria-label="مسح البحث">×</button>
+         <span class="search-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg></span>
+         <span class="search-kbd" aria-hidden="true"><span>/</span> للبحث</span>
+       </div>
+     </div>
+     <div style="display:flex; align-items:center; gap:8px;">
+       <button id="themeToggle" class="icon-btn" type="button" aria-label="تفعيل الوضع الداكن" title="الوضع الداكن">
+         <svg id="themeIconSun" class="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/></svg>
+         <svg id="themeIconMoon" class="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+       </button>
+       <button class="icon-btn" id="favToggle" type="button" aria-label="المفضلة" title="المفضلة" style="position:relative;">
+         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 17.3l-5.4 3.2 1.4-6.1L3 9.9l6.2-.5L12 3.8l2.8 5.6 6.2.5-5 4.5 1.4 6.1z"/></svg>
+         <span class="fav-count" id="favCount" style="display:none;">0</span>
+       </button>
+       <button id="menuToggle" class="icon-btn navbar__toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu">
+         <svg id="iconMenu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+         <svg id="iconClose" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+       </button>
+     </div>
+   </div>
+ </header>
+ <nav id="mobileMenu" class="mobile-menu" aria-label="قائمة الجوال" aria-hidden="true">
+   <div class="mobile-menu__search" role="search">
+     <label class="sr-only" for="mobileSearch">بحث</label>
+     <div class="search-input-wrap">
+       <input id="mobileSearch" class="search-input js-search-input" type="search" placeholder="ابحث عن مصادر، منح، مسارات..." autocomplete="off" /><button class="search-clear" type="button" aria-label="مسح البحث">×</button>
+       <span class="search-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg></span>
+     </div>
+   </div>
+   <div class="mobile-menu__links">
+     <a href="index.html" class="mobile-menu__link is-active">الرئيسية <span aria-hidden="true">‹</span></a>
+     <a href="pages/courses.html" class="mobile-menu__link">مصادر الكورسات المجانية <span>‹</span></a>
+     <a href="pages/scholarships.html" class="mobile-menu__link">المنح والدورات المجانية <span>‹</span></a>
+     <a href="pages/career-paths.html" class="mobile-menu__link">المسارات الوظيفية <span>‹</span></a>
+     <a href="pages/youtube.html" class="mobile-menu__link">قنوات يوتيوب مفيدة <span>‹</span></a>
+      <a href="pages/community.html" class="mobile-menu__link">المجتمع — ديسكورد <span>‹</span></a>
+   </div>
+ </nav>
+ <div id="searchOverlay" class="search-overlay" aria-hidden="true" role="dialog" aria-label="نافذة البحث">
+   <div class="search-overlay__panel">
+     <div class="search-overlay__header">
+       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--text-muted)"><circle cx="11" cy="11" r="7"/><path d="M20 20L16 16"/></svg>
+       <input id="searchOverlayInput" class="search-overlay__input" type="search" placeholder="اكتب للبحث في المصادر والمنح والمسارات..." autocomplete="off" aria-label="البحث" /><button class="search-clear" id="searchOverlayClear" type="button" aria-label="مسح البحث" style="position:static; margin-right:8px;">×</button>
+       <button id="searchOverlayClose" class="icon-btn" type="button" aria-label="إغلاق البحث" style="width:36px;height:36px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg></button>
+     </div>
+     <div id="searchOverlayResults" class="search-overlay__body"></div>
+   </div>
+ </div>
+
+ <main id="main">
+   <!-- HERO مبسط + بقع IDAI 43 -->
+   <section class="hero--simple">
+     <span class="hero-blob hero-blob--tr" aria-hidden="true"></span>
+     <span class="hero-blob hero-blob--bl" aria-hidden="true"></span>
+     <canvas id="heroCanvas" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:1;"></canvas>
+     <div class="container hero-simple__inner reveal is-visible">
+       <div class="hero-badge"><span class="hero-badge-dot"></span> تحديث 13 أكتوبر 2026 — مصادر موثوقة</div>
+       <h1 class="hero-title">كل المصادر الموثوقة<br><span>والفرص المهنية</span> في مكان واحد</h1>
+       <p class="hero-desc">
+         <strong>عصفورة الويب</strong> تجمع <strong>39 عنصر</strong> (37 منصة + Power English + Z American English) و <strong>35 فرصة</strong> و <strong>9 مسارات</strong> بخارطة طريق و <strong>54 قناة يوتيوب</strong> — بروابط رسمية مباشرة، مع بحث فوري وفلترة هادئة.
+       </p>
+       <div class="hero-actions">
+         <a href="pages/courses.html" class="btn btn--primary btn--lg">استكشاف المصادر</a>
+         <a href="pages/career-paths.html" class="btn btn--ghost btn--lg" style="background:var(--bg-surface); border:1px solid var(--border-color);">عرض المسارات</a>
+       </div>
+       <div class="hero-trust">
+         <span class="hero-trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> مصادر موثوقة</span>
+         <span class="hero-trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v5l3 3"/></svg> تحديث دوري</span>
+         <span class="hero-trust-item">🔍 بحث فوري — 229 عنصر</span>
+       </div>
+       <div class="stats-simple" aria-label="إحصائيات المنصة">
+         <span><b>39</b> عنصر</span><i></i>
+         <span><b>35</b> فرصة</span><i></i>
+         <span><b>9</b> مسارات</span><i></i>
+         <span><b>54</b> قناة</span>
+       </div>
+     </div>
+   </section>
+
+   <!-- الأقسام الرئيسية فقط — مبسطة -->
+   <section class="section section--landing">
+     <div class="container">
+       <div class="section-header--simple reveal">
+         <h2 class="section-header__title">الأقسام الرئيسية</h2>
+         <p class="section-header__desc"><strong>39 عنصر</strong> (37 منصة + Power English + Z American English) • <strong>35 فرصة</strong> موثقة • <strong>9 مسارات</strong> بخرائط طريق • <strong>54 قناة</strong> يوتيوب — بروابط رسمية ومحدّثة حتى 13 أكتوبر 2026.</p>
+       </div>
+       <div class="section-cards">
+         <!-- البطاقات الأهم أولاً — أوسع بصرياً -->
+         <article class="card landing-card landing-card--featured reveal">
+           <div class="card__icon" style="background:#FFF0F1; color:#E32027; border:1px solid #FFE0E3;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="6"/><path d="M15.5 9a3.5 3.5 0 0 1 3 5.5L12 21l-6.5-6.5A3.5 3.5 0 0 1 8.5 9"/></svg></div>
+           <h3 class="card__title">المنح والدورات</h3>
+           <p class="card__desc"><strong>35 فرصة</strong> — 9 مصرية + 15 دولية + 11 موثقة بروابط رسمية.</p>
+           <div style="display:flex; gap:6px; flex-wrap:wrap; margin:14px 0 0;"><span class="badge badge--muted">9 مصرية</span><span class="badge badge--muted">15 دولية</span></div>
+           <a href="pages/scholarships.html" class="btn btn--primary" style="width:100%; margin-top:16px;">استعراض 35 فرصة</a>
+         </article>
+         <article class="card landing-card landing-card--featured reveal">
+           <div class="card__icon" style="background:#FFF0F1; color:#E32027; border:1px solid #FFE0E3;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 20c-4-2-7-5-7-10V6l7-4 7 4v4c0 5-3 8-7 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+           <h3 class="card__title">المسارات الوظيفية</h3>
+           <p class="card__desc"><strong>9 مسارات</strong> — كل مسار 3–6 مراحل بمصادر وخطة 90 يوم.</p>
+           <div style="display:flex; gap:6px; flex-wrap:wrap; margin:14px 0 0;"><span class="badge badge--muted">3–12 شهر</span><span class="badge badge--muted">تتبّع</span></div>
+           <a href="pages/career-paths.html" class="btn btn--primary" style="width:100%; margin-top:16px;">استعراض المسارات</a>
+         </article>
+         <article class="card landing-card landing-card--muted reveal">
+           <div class="card__icon" style="background:var(--bg-muted); color:var(--text-muted); border:1px solid var(--border-color);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 7l10-5 10 5-10 5z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></svg></div>
+           <h3 class="card__title">مصادر الكورسات</h3>
+           <p class="card__desc"><strong>39 عنصر</strong> — 37 منصة فئة A–D + صفحتان مخصصتان (Power English + Z American English).</p>
+           <div style="display:flex; gap:6px; flex-wrap:wrap; margin:14px 0 0;"><span class="badge badge--muted">25 عالمية</span><span class="badge badge--muted">13 عربية</span><span class="badge" style="background:#E0F2FE;color:#0E7490;border:1px solid #BAE6FD">+ 2 صفحة مخصصة</span></div>
+           <a href="pages/courses.html" class="btn btn--ghost" style="width:100%; margin-top:16px; border:1px solid var(--border-color);">استعراض 39 عنصر</a>
+         </article>
+         <article class="card landing-card landing-card--muted reveal">
+           <div class="card__icon" style="background:var(--bg-muted); color:var(--text-muted); border:1px solid var(--border-color);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 12c0 3-1.5 5-4 6s-4-1-6-1-3.5 2-6 1-4-3-4-6 1.5-5 4-6 4 1 6 1 3.5-2 6-1 4 3 4 6z"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg></div>
+           <h3 class="card__title">قنوات يوتيوب</h3>
+           <p class="card__desc"><strong>54 قناة</strong> — 15 عربية + 39 إنجليزية بروابط موثقة.</p>
+           <div style="display:flex; gap:6px; flex-wrap:wrap; margin:14px 0 0;"><span class="badge badge--muted">53 موثقة</span><span class="badge badge--muted">15 ع + 39 E</span></div>
+           <a href="pages/youtube.html" class="btn btn--ghost" style="width:100%; margin-top:16px; border:1px solid var(--border-color);">استعراض 54 قناة</a>
+         </article>
+       </div>
+       <div class="cta-simple reveal">
+         <div>
+           <h3>ابدأ الآن — مجاني 100%</h3>
+           <p>اختر قسماً وابدأ التعلّم مباشرة برابط رسمي. لا إعلانات ولا تسجيل مطلوب.</p>
+         </div>
+         <a href="pages/courses.html" class="btn btn--primary">استعراض المصادر</a>
+       </div>
+     </div>
+   </section>
+ </main>
+
+ <footer class="footer" role="contentinfo">
+   <div class="container">
+     <div class="footer__grid">
+       <div>
+         <div class="footer__brand-title"><span style="width:28px;height:28px; border-radius:8px; background:#FFFFFF; border:1.5px solid #FFE0E3; color:#E32027; display:grid; place-items:center; box-shadow:0 1px 3px rgba(10,10,10,0.08);"><svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 5.2C13.1 7.9 8.4 9.9 2.8 10.4C5.7 13.2 10 15.7 16 18.2C22 15.7 26.3 13.2 29.2 10.4C23.6 9.9 18.9 7.9 16 5.2Z" fill="currentColor"/><path d="M16 18.2V23.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13.1 24.2H18.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span> عصفورة الويب</div>
+         <p class="footer__brand-desc">منصة تجمع المصادر التعليمية المجانية والمنح والمسارات الوظيفية الموثوقة للمستخدمين في مصر — بتصميم خفيف وسريع ومتجاوب.</p>
+       </div>
+       <div>
+         <h4 class="footer__col-title">الأقسام</h4>
+         <div class="footer__links">
+           <a href="pages/courses.html" class="footer__link">مصادر الكورسات المجانية</a>
+           <a href="pages/scholarships.html" class="footer__link">المنح والدورات المجانية</a>
+           <a href="pages/career-paths.html" class="footer__link">المسارات الوظيفية</a>
+           <a href="pages/youtube.html" class="footer__link">قنوات يوتيوب مفيدة</a>
+            <a href="pages/community.html" class="footer__link" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.54 0c.29 0 .52.22.54.5v19.42c0 .28-.23.51-.51.54l-5.6.7a.5.5 0 0 1-.57-.5v-1.2l.5-.06a.5.5 0 0 0 .44-.5V5.2a.5.5 0 0 0-.5-.5h-8.2a.5.5 0 0 0-.5.5v13.7c0 .25.18.46.42.5l.5.06v1.2a.5.5 0 0 1-.57.5l-5.6-.7a.52.52 0 0 1-.51-.54V.5c.02-.28.25-.5.54-.5h13.12Z"/><circle cx="9.5" cy="13.5" r="1.5"/><circle cx="14.5" cy="13.5" r="1.5"/></svg> مجتمع الديسكورد</a>
+           <a href="index.html" class="footer__link">الصفحة الرئيسية</a>
+         </div>
+       </div>
+       <div>
+         <h4 class="footer__col-title">معلومات</h4>
+         <div class="footer__links">
+           <a href="#" class="footer__link" data-coming-soon>عن المنصة</a>
+           <a href="#" class="footer__link" data-coming-soon>تواصل معنا</a>
+           <a href="#" class="footer__link" data-coming-soon>سياسة الخصوصية</a>
+         </div>
+       </div>
+     </div>
+     <div class="footer__bottom"><span>© 2026 عصفورة الويب — جميع الحقوق محفوظة. صُنع في مصر 🇪🇬</span><div class="footer__legal"><span>مصادر موثوقة</span><span>•</span><span>تحديث دوري</span><span>•</span><span>مجاني بالكامل</span></div></div>
+   </div>
+ </footer>
+ <button class="back-to-top" id="backToTop" type="button" aria-label="العودة للأعلى"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg></button>
+ <div id="toast" class="toast" role="status" aria-live="polite"></div>
+ <script src="js/data.js"></script>
+ <script src="js/render.js"></script>
+ <script src="js/app.js"></script>
+ <script>document.addEventListener('DOMContentLoaded',()=>{ document.querySelectorAll('.reveal').forEach((el,i)=> setTimeout(()=>el.classList.add('is-visible'), 60*i)); });</script>
+ <script>
+ // Three.js hero particles — Phase A pilot
+ // Loads ONLY on desktop ≥768px, no reduced-motion
+ if (window.innerWidth >= 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+   import('./js/three-hero.js').then(m => m.init()).catch(() => {});
+ }
+ </script>
+ </body>
+</html>
